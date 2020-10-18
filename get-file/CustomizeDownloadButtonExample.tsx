@@ -1,6 +1,6 @@
 import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
-import { downloadPlugin, RenderDownloadProps } from '@react-pdf-viewer/download';
+import { getFilePlugin, RenderDownloadProps } from '@react-pdf-viewer/get-file';
 
 import '@react-pdf-viewer/core/styles/index.css';
 
@@ -9,8 +9,8 @@ interface CustomizeDownloadButtonExampleProps {
 }
 
 const CustomizeDownloadButtonExample: React.FC<CustomizeDownloadButtonExampleProps> = ({ fileUrl }) => {
-    const downloadPluginInstance = downloadPlugin();
-    const { Download } = downloadPluginInstance;
+    const getFilePluginInstance = getFilePlugin();
+    const { Download } = getFilePluginInstance;
 
     return (
         <div
@@ -58,7 +58,7 @@ const CustomizeDownloadButtonExample: React.FC<CustomizeDownloadButtonExamplePro
                 <Viewer
                     fileUrl={fileUrl}
                     plugins={[
-                        downloadPluginInstance,
+                        getFilePluginInstance,
                     ]}
                 />
             </div>
