@@ -1,16 +1,22 @@
 import React from 'react';
-import { Viewer } from '@react-pdf-viewer/core';
-import { downloadPlugin } from '@react-pdf-viewer/download';
+import { OpenFile, Viewer } from '@react-pdf-viewer/core';
+import { getFilePlugin } from '@react-pdf-viewer/get-file';
 
 import '@react-pdf-viewer/core/styles/index.css';
 
-interface DownloadButtonExampleProps {
+interface CustomizeFileNameExampleProps {
     fileUrl: string;
 }
 
-const DownloadButtonExample: React.FC<DownloadButtonExampleProps> = ({ fileUrl }) => {
-    const downloadPluginInstance = downloadPlugin();
-    const { DownloadButton } = downloadPluginInstance;
+const CustomizeFileNameExample: React.FC<CustomizeFileNameExampleProps> = ({ fileUrl }) => {
+    const getFilePluginInstance = getFilePlugin({
+        fileNameGenerator: (file: OpenFile) => {
+            // `file.name` is the URL of opened file
+            const fileName = file.name.substring(file.name.lastIndexOf('/') + 1);
+            return `a-copy-of-${fileName}`;
+        },
+    });
+    const { DownloadButton } = getFilePluginInstance;
 
     return (
         <div
@@ -41,7 +47,7 @@ const DownloadButtonExample: React.FC<DownloadButtonExampleProps> = ({ fileUrl }
                 <Viewer
                     fileUrl={fileUrl}
                     plugins={[
-                        downloadPluginInstance,
+                        getFilePluginInstance,
                     ]}
                 />
             </div>
@@ -49,4 +55,4 @@ const DownloadButtonExample: React.FC<DownloadButtonExampleProps> = ({ fileUrl }
     );
 };
 
-export default DownloadButtonExample;
+export default CustomizeFileNameExample;

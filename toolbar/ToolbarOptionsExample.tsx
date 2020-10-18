@@ -12,7 +12,7 @@ interface ToolbarOptionsExampleProps {
 
 const ToolbarOptionsExample: React.FC<ToolbarOptionsExampleProps> = ({ fileUrl }) => {
     const toolbarPluginInstance = toolbarPlugin({
-        downloadPlugin: {
+        getFilePlugin: {
             fileNameGenerator: (file: OpenFile) => {
                 // `file.name` is the URL of opened file
                 const fileName = file.name.substring(file.name.lastIndexOf('/') + 1);
