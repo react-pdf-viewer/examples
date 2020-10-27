@@ -2,8 +2,8 @@ import React from 'react';
 import { SpecialZoomLevel, Viewer } from '@react-pdf-viewer/core';
 import { RenderZoomProps, zoomPlugin } from '@react-pdf-viewer/zoom';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/zoom/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
 interface CustomizeQuickZoomExampleProps {
     fileUrl: string;

@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/toolbar/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 interface ToolbarSlotsExampleProps {
     fileUrl: string;

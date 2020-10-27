@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { openPlugin, RenderOpenProps } from '@react-pdf-viewer/open';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/open/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/open/lib/styles/index.css';
 
 interface CustomizeOpenButtonExampleProps {
     fileUrl: string;

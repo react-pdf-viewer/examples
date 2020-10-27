@@ -2,7 +2,7 @@ import React from 'react';
 import { OpenFile, Viewer } from '@react-pdf-viewer/core';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
 
-import '@react-pdf-viewer/core/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface CustomizeFileNameExampleProps {
     fileUrl: string;

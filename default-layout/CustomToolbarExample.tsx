@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin, ToolbarProps, ToolbarSlot } from '@react-pdf-viewer/default-layout';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/default-layout/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const CustomToolbarExample: React.FC<{}> = () => {
     const renderToolbar = (Toolbar: ((props: ToolbarProps) => ReactElement)) => (

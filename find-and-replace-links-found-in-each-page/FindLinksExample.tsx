@@ -2,6 +2,8 @@ import React from 'react';
 import { Plugin, PluginOnTextLayerRender, Viewer } from '@react-pdf-viewer/core';
 import linkifyElement from 'linkifyjs/element';
 
+import '@react-pdf-viewer/core/lib/styles/index.css';
+
 const FindLinksExample: React.FC<{}> = () => {
     const findLinksPlugin = (): Plugin => {
         const findLinks = (e: PluginOnTextLayerRender) => {

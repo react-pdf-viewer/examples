@@ -1,6 +1,8 @@
 import React from 'react';
 import { CharacterMap, Viewer } from '@react-pdf-viewer/core';
 
+import '@react-pdf-viewer/core/lib/styles/index.css';
+
 interface CharacterMapExampleProps {
     fileUrl: string;
 }

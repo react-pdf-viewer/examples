@@ -3,9 +3,9 @@ import { Viewer } from '@react-pdf-viewer/core';
 import { RenderSwitchScrollModeProps, ScrollMode, scrollModePlugin } from '@react-pdf-viewer/scroll-mode';
 import { RenderCurrentScaleProps, RenderZoomInProps, RenderZoomOutProps, zoomPlugin } from '@react-pdf-viewer/zoom';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/scroll-mode/styles/index.css';
-import '@react-pdf-viewer/zoom/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/scroll-mode/lib/styles/index.css';
+import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
 interface CustomSwitchModeButtonsExampleProps {
     fileUrl: string;

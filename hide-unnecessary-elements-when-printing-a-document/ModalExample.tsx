@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Viewer } from '@react-pdf-viewer/core';
 import { printPlugin, RenderPrintProps } from '@react-pdf-viewer/print';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/print/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/print/lib/styles/index.css';
 
 import './modalExample.css';
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { SelectionMode, selectionModePlugin } from '@react-pdf-viewer/selection-mode';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/selection-mode/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/selection-mode/lib/styles/index.css';
 
 interface SwitchSelectionModeButtonsExampleProps {
     fileUrl: string;
