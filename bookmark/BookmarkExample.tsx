@@ -2,8 +2,8 @@ import React from 'react';
 import { bookmarkPlugin } from '@react-pdf-viewer/bookmark';
 import { Viewer } from '@react-pdf-viewer/core';
 
-import '@react-pdf-viewer/bookmark/styles/index.css';
-import '@react-pdf-viewer/core/styles/index.css';
+import '@react-pdf-viewer/bookmark/lib/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface BookmarkExampleProps {
     fileUrl: string;

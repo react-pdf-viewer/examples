@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { searchPlugin } from '@react-pdf-viewer/search';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/search/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/search/lib/styles/index.css';
 
 interface ShowSearchPopoverButtonExampleProps {
     fileUrl: string;

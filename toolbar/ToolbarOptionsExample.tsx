@@ -3,8 +3,8 @@ import { OpenFile, Viewer } from '@react-pdf-viewer/core';
 import { SelectionMode } from '@react-pdf-viewer/selection-mode';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/toolbar/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 interface ToolbarOptionsExampleProps {
     fileUrl: string;

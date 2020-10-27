@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageChangeEvent, Viewer } from '@react-pdf-viewer/core';
 
-import '@react-pdf-viewer/core/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface StoreCurrentPageExampleProps {
     fileUrl: string;

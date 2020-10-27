@@ -2,7 +2,7 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { rotatePlugin } from '@react-pdf-viewer/rotate';
 
-import '@react-pdf-viewer/core/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface RotateButtonsExampleProps {
     fileUrl: string;

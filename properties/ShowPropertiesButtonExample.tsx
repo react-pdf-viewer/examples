@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { propertiesPlugin } from '@react-pdf-viewer/properties';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/properties/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/properties/lib/styles/index.css';
 
 interface ShowPropertiesButtonExampleProps {
     fileUrl: string;

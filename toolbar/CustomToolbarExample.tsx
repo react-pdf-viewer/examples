@@ -4,8 +4,8 @@ import { RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
 import { RenderCurrentScaleProps, RenderZoomInProps, RenderZoomOutProps } from '@react-pdf-viewer/zoom';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/toolbar/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 interface CustomToolbarExampleProps {
     fileUrl: string;

@@ -2,8 +2,8 @@ import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { fullScreenPlugin } from '@react-pdf-viewer/full-screen';
 
-import '@react-pdf-viewer/core/styles/index.css';
-import '@react-pdf-viewer/full-screen/styles/index.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/full-screen/lib/styles/index.css';
 
 interface FullScreenButtonExampleProps {
     fileUrl: string;
