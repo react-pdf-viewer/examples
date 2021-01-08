@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { Button, DocumentLoadEvent, PdfJs, Position, PrimaryButton, Tooltip, Viewer } from '@react-pdf-viewer/core';
-import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-import { HighlightArea, highlightPlugin, MessageIcon, RenderHighlightContentProps, RenderHighlightTargetProps, RenderHighlightsProps } from '@react-pdf-viewer/highlight';
+import React from 'react';
+import { highlightPlugin, HighlightArea, MessageIcon, RenderHighlightContentProps, RenderHighlightsProps, RenderHighlightTargetProps } from '@react-pdf-viewer/highlight';
+import { Button, Position, PrimaryButton, Tooltip, Viewer } from '@react-pdf-viewer/core';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+interface RenderHighlightsExampleProps {
+    fileUrl: string;
+}
 
 interface Note {
     id: number;
@@ -13,26 +16,10 @@ interface Note {
     quote: string;
 }
 
-interface HighlightExampleProps {
-    fileUrl: string;
-}
-
-const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
+const RenderHighlightsExample: React.FC<RenderHighlightsExampleProps> = ({ fileUrl }) => {
     const [message, setMessage] = React.useState('');
     const [notes, setNotes] = React.useState<Note[]>([]);
-    const notesContainerRef = React.useRef<HTMLDivElement | null>(null);
     let noteId = notes.length;
-    
-    const noteEles: Map<number, HTMLElement> = new Map();
-    const [currentDoc, setCurrentDoc] = React.useState<PdfJs.PdfDocument | null>(null);
-
-    const handleDocumentLoad = (e: DocumentLoadEvent) => {
-        setCurrentDoc(e.doc);
-        if (currentDoc && currentDoc !== e.doc) {
-            // User opens new document
-            setNotes([]);
-        }
-    };
 
     const renderHighlightTarget = (props: RenderHighlightTargetProps) => (
         <div
@@ -105,14 +92,6 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
         );
     };
 
-    const jumpToNote = (note: Note) => {
-        activateTab(3);
-        const notesContainer = notesContainerRef.current;
-        if (noteEles.has(note.id) && notesContainer) {
-            notesContainer.scrollTop = noteEles.get(note.id).getBoundingClientRect().top;
-        }
-    };
-
     const renderHighlights = (props: RenderHighlightsProps) => (
         <div>
         {
@@ -130,7 +109,6 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
                                         opacity: 0.4,
                                     }, props.getCssProperties(area, props.rotation))
                                 }
-                                onClick={() => jumpToNote(note)}
                             />
                         ))
                 }
@@ -146,83 +124,22 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
         renderHighlights,
     });
 
-    const { jumpToHighlightArea } = highlightPluginInstance;
-
-    React.useEffect(() => {
-        return () => {
-            noteEles.clear();
-        };
-    }, []);
-
-    const sidebarNotes = (
-        <div
-            ref={notesContainerRef}
-            style={{
-                overflow: 'auto',
-                width: '100%',
-            }}
-        >
-            {notes.length === 0 && <div style={{ textAlign: 'center' }}>There is no note</div>}
-            {
-                notes.map(note => {
-                    return (
-                        <div
-                            key={note.id}
-                            style={{
-                                borderBottom: '1px solid rgba(0, 0, 0, .3)',
-                                cursor: 'pointer',
-                                padding: '8px',
-                            }}
-                            onClick={() => jumpToHighlightArea(note.highlightAreas[0])}
-                            ref={(ref): void => {
-                                noteEles.set(note.id, ref as HTMLElement);
-                            }}
-                        >
-                            <blockquote
-                                style={{
-                                    borderLeft: '2px solid rgba(0, 0, 0, 0.2)',
-                                    fontSize: '.75rem',
-                                    lineHeight: 1.5,
-                                    margin: '0 0 8px 0',
-                                    paddingLeft: '8px',
-                                    textAlign: 'justify',
-                                }}
-                            >
-                                {note.quote}
-                            </blockquote>
-                            {note.content}
-                        </div>
-                    );
-                })
-            }
-        </div>
-    );
-
-    const defaultLayoutPluginInstance = defaultLayoutPlugin({
-        sidebarTabs: defaultTabs => defaultTabs.concat({
-            content: sidebarNotes,
-            icon: <MessageIcon />,
-            title: <>Notes</>,
-        }),
-    });
-    const { activateTab } = defaultLayoutPluginInstance;
-
     return (
         <div
             style={{
+                border: '1px solid rgba(0, 0, 0, 0.3)',
                 height: '100%',
+                overflow: 'hidden',
             }}
         >
             <Viewer
                 fileUrl={fileUrl}
                 plugins={[
                     highlightPluginInstance,
-                    defaultLayoutPluginInstance,
                 ]}
-                onDocumentLoad={handleDocumentLoad}
             />
         </div>
     );
 };
 
-export default HighlightExample;
+export default RenderHighlightsExample;
