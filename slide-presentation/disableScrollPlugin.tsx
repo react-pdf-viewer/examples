@@ -1,27 +1,20 @@
-import * as React from 'react';
-import { createStore, Plugin, PluginFunctions, RenderViewer } from '@react-pdf-viewer/core';
-
-import StoreProps from './StoreProps';
-import Tracker from './Tracker';
+import { Plugin, RenderViewer } from '@react-pdf-viewer/core';
 
 const disableScrollPlugin = (): Plugin => {
-    const store = React.useMemo(() => createStore<StoreProps>({}), []);
-
     const renderViewer = (props: RenderViewer) => {
         const { slot } = props;
-        slot.children = (
-            <>
-            <Tracker store={store} />
-            {slot.children}
-            </>
-        );
+
+        if (slot.subSlot && slot.subSlot.attrs && slot.subSlot.attrs.style) {
+            slot.subSlot.attrs.style = Object.assign({}, slot.subSlot.attrs.style, {
+                // Disable scrolling in the pages container
+                overflow: 'hidden',
+            });
+        }
+
         return slot;
     };
 
     return {
-        install: (pluginFunctions: PluginFunctions) => {
-            store.update('getPagesContainer', pluginFunctions.getPagesContainer);
-        },
         renderViewer,
     };
 };
