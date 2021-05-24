@@ -1,6 +1,6 @@
 import React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
-import { pageNavigationPlugin, RenderGoToFirstPageProps, RenderGoToLastPageProps, RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
+import { pageNavigationPlugin, RenderGoToPageProps } from '@react-pdf-viewer/page-navigation';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
@@ -35,7 +35,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                 <div style={{ padding: '0 2px' }}>
                     <GoToFirstPage>
                     {
-                        (props: RenderGoToFirstPageProps) => (
+                        (props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -56,7 +56,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                 <div style={{ padding: '0 2px' }}>
                     <GoToPreviousPage>
                     {
-                        (props: RenderGoToPreviousPageProps) => (
+                        (props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -78,7 +78,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                 <div style={{ padding: '0 2px' }}>
                     <GoToNextPage>
                     {
-                        (props: RenderGoToNextPageProps) => (
+                        (props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -100,7 +100,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                 <div style={{ padding: '0 2px' }}>
                     <GoToLastPage>
                     {
-                        (props: RenderGoToLastPageProps) => (
+                        (props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
