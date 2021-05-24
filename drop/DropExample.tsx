@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { dropPlugin } from '@react-pdf-viewer/drop';
 import { Viewer } from '@react-pdf-viewer/core';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { highlightPlugin, MessageIcon, RenderHighlightTargetProps } from '@react-pdf-viewer/highlight';
 import { Button, Position, Tooltip, Viewer } from '@react-pdf-viewer/core';
 

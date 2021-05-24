@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { attachmentPlugin } from '@react-pdf-viewer/attachment';
 import { Viewer } from '@react-pdf-viewer/core';
 

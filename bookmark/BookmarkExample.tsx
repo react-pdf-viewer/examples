@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { bookmarkPlugin } from '@react-pdf-viewer/bookmark';
 import { Viewer } from '@react-pdf-viewer/core';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ProgressBar, Viewer } from '@react-pdf-viewer/core';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
