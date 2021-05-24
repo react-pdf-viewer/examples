@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { OpenFile, Viewer } from '@react-pdf-viewer/core';
 import { SelectionMode } from '@react-pdf-viewer/selection-mode';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';

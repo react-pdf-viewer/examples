@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Viewer, RenderPageProps } from '@react-pdf-viewer/core';
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
 

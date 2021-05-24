@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { pageNavigationPlugin, RenderGoToPageProps } from '@react-pdf-viewer/page-navigation';
 

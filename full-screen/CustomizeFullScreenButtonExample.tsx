@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { fullScreenPlugin, RenderEnterFullScreenProps } from '@react-pdf-viewer/full-screen';
 

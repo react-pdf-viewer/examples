@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { SpecialZoomLevel, Viewer } from '@react-pdf-viewer/core';
 import { RenderZoomProps, zoomPlugin } from '@react-pdf-viewer/zoom';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { LocalizationMap, LocalizationProvider, Viewer } from '@react-pdf-viewer/core';
 import { localeSwitcherPlugin } from '@react-pdf-viewer/locale-switcher';
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';

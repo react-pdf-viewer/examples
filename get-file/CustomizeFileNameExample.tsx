@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { OpenFile, Viewer } from '@react-pdf-viewer/core';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
 

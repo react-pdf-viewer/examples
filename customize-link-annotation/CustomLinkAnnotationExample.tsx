@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { AnnotationType, Plugin, PluginOnAnnotationLayerRender, Viewer } from '@react-pdf-viewer/core';
 
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';

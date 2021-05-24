@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
 import { RenderSwitchScrollModeProps, ScrollMode, scrollModePlugin } from '@react-pdf-viewer/scroll-mode';
 import { RenderCurrentScaleProps, RenderZoomInProps, RenderZoomOutProps, zoomPlugin } from '@react-pdf-viewer/zoom';
