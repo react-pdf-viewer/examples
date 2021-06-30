@@ -15,9 +15,13 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
 
     return (
         <div
+            // Because this custom toolbar is displayed outside of `Viewer`, we have to set the `rpv-core__viewer` class
+            // so the inner components have proper styles
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
-                height: '100%',
+                display: 'flex',
+                height: '100%',                
                 position: 'relative',
             }}
         >
@@ -55,7 +59,13 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
                                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                     <GoToPreviousPage />
                                 </div>
-                                <div style={{ padding: '0px 2px' }}>
+                                <div
+                                    style={{
+                                        alignItems: 'center',
+                                        display: 'flex',
+                                        padding: '0px 2px',
+                                    }}
+                                >
                                     <CurrentPageInput /> / <NumberOfPages />
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>
