@@ -17,6 +17,7 @@ const HighlightMultipleKeywordsExample: React.FC<HighlightMultipleKeywordsExampl
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',

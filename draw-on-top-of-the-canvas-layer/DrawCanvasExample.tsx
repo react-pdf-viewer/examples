@@ -40,14 +40,12 @@ const DrawCanvasExample: React.FC<DrawCanvasExampleProps> = ({ fileUrl }) => {
     const customCanvasPluginInstance = customCanvasPlugin();
 
     return (
-        <div style={{ border: '1px solid rgba(0, 0, 0, 0.3)', height: '750px' }}>
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    customCanvasPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            plugins={[
+                customCanvasPluginInstance,
+            ]}
+        />
     );
 };
 

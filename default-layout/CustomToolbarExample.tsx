@@ -94,9 +94,10 @@ const CustomToolbarExample: React.FC<{}> = () => {
                             }
                             </GoToPreviousPage>
                         </div>
-                        <div style={{ padding: '0px 2px' }}>
-                            <CurrentPageInput /> / <NumberOfPages />
+                        <div style={{ padding: '0px 2px', width: '4rem' }}>
+                            <CurrentPageInput />
                         </div>
+                        <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
                         <div style={{ padding: '0px 2px' }}>
                             <GoToNextPage>
                             {

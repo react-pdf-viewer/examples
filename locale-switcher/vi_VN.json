@@ -85,6 +85,10 @@
         "handTool": "Cầm tay",
         "textSelectionTool": "Chọn văn bản"
     },
+    "theme": {
+        "switchDarkTheme": "Giao diện tối",
+        "switchLightTheme": "Giao diện sáng"
+    },
     "toolbar": {
         "moreActions": "Nhiều tác vụ khác"
     },

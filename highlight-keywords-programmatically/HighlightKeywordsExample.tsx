@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Icon, Position, Tooltip, Viewer } from '@react-pdf-viewer/core';
+import { Icon, MinimalButton, Position, Tooltip, Viewer } from '@react-pdf-viewer/core';
 import { FlagKeyword, NextIcon, PreviousIcon, searchPlugin } from '@react-pdf-viewer/search';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -25,6 +25,7 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -134,9 +135,9 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                     <Tooltip
                         position={Position.BottomCenter}
                         target={
-                            <Button onClick={jumpToPreviousMatch}>
+                            <MinimalButton onClick={jumpToPreviousMatch}>
                                 <PreviousIcon />
-                            </Button>
+                            </MinimalButton>
                         }
                         content={() => 'Previous match'}
                         offset={{ left: 0, top: 8 }}
@@ -146,9 +147,9 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                     <Tooltip
                         position={Position.BottomCenter}
                         target={
-                            <Button onClick={jumpToNextMatch}>
+                            <MinimalButton onClick={jumpToNextMatch}>
                                 <NextIcon />
-                            </Button>
+                            </MinimalButton>
                         }
                         content={() => 'Next match'}
                         offset={{ left: 0, top: 8 }}

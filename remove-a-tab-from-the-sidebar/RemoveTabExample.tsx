@@ -19,18 +19,12 @@ const RemoveTabExample: React.FC<RemoveTabExampleProps> = ({ fileUrl }) => {
     });
 
     return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            plugins={[
+                defaultLayoutPluginInstance,
+            ]}
+        />
     );
 };
 

@@ -4,11 +4,11 @@ import { RenderRotateProps, RotateDirection, rotatePlugin } from '@react-pdf-vie
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
-interface CustomRotateButtonsExampleProps {
+interface CustomizeRotateButtonsExampleProps {
     fileUrl: string;
 }
 
-const CustomRotateButtonsExample: React.FC<CustomRotateButtonsExampleProps> = ({ fileUrl }) => {
+const CustomizeRotateButtonsExample: React.FC<CustomizeRotateButtonsExampleProps> = ({ fileUrl }) => {
     const rotatePluginInstance = rotatePlugin();
     const { Rotate } = rotatePluginInstance;
 
@@ -92,4 +92,4 @@ const CustomRotateButtonsExample: React.FC<CustomRotateButtonsExampleProps> = ({
     );
 };
 
-export default CustomRotateButtonsExample;
+export default CustomizeRotateButtonsExample;

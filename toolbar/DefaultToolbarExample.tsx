@@ -5,16 +5,17 @@ import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
-interface ToolbarExampleProps {
+interface DefaultToolbarExampleProps {
     fileUrl: string;
 }
 
-const ToolbarExample: React.FC<ToolbarExampleProps> = ({ fileUrl }) => {
+const DefaultToolbarExample: React.FC<DefaultToolbarExampleProps> = ({ fileUrl }) => {
     const toolbarPluginInstance = toolbarPlugin();
     const { Toolbar } = toolbarPluginInstance;
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -50,4 +51,4 @@ const ToolbarExample: React.FC<ToolbarExampleProps> = ({ fileUrl }) => {
     );
 };
 
-export default ToolbarExample;
+export default DefaultToolbarExample;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Viewer } from '@react-pdf-viewer/core';
-import { RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
+import { RenderGoToPageProps } from '@react-pdf-viewer/page-navigation';
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
 import { RenderCurrentScaleProps, RenderZoomInProps, RenderZoomOutProps } from '@react-pdf-viewer/zoom';
 
@@ -96,7 +96,7 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                     <GoToPreviousPage>
                                     {
-                                        (props: RenderGoToPreviousPageProps) => (
+                                        (props: RenderGoToPageProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -115,13 +115,14 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                     }
                                     </GoToPreviousPage>
                                 </div>
-                                <div style={{ padding: '0px 2px' }}>
-                                    <CurrentPageInput /> / <NumberOfPages />
+                                <div style={{ padding: '0px 2px', width: '4rem' }}>
+                                    <CurrentPageInput />
                                 </div>
+                                <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
                                 <div style={{ padding: '0px 2px' }}>
                                     <GoToNextPage>
                                     {
-                                        (props: RenderGoToNextPageProps) => (
+                                        (props: RenderGoToPageProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',

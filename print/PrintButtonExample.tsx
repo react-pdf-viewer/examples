@@ -15,6 +15,7 @@ const PrintButtonExample: React.FC<PrintButtonExampleProps> = ({ fileUrl }) => {
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
