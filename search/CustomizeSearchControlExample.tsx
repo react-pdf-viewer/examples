@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Icon, Position, Tooltip, Viewer } from '@react-pdf-viewer/core';
+import { Icon, MinimalButton, Position, Tooltip, Viewer } from '@react-pdf-viewer/core';
 import { NextIcon, PreviousIcon, RenderSearchProps, searchPlugin } from '@react-pdf-viewer/search';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -11,6 +11,7 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -120,9 +121,9 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                     <Tooltip
                                         position={Position.BottomCenter}
                                         target={
-                                            <Button onClick={renderSearchProps.jumpToPreviousMatch}>
+                                            <MinimalButton onClick={renderSearchProps.jumpToPreviousMatch}>
                                                 <PreviousIcon />
-                                            </Button>
+                                            </MinimalButton>
                                         }
                                         content={() => 'Previous match'}
                                         offset={{ left: 0, top: 8 }}
@@ -132,9 +133,9 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                     <Tooltip
                                         position={Position.BottomCenter}
                                         target={
-                                            <Button onClick={renderSearchProps.jumpToNextMatch}>
+                                            <MinimalButton onClick={renderSearchProps.jumpToNextMatch}>
                                                 <NextIcon />
-                                            </Button>
+                                            </MinimalButton>
                                         }
                                         content={() => 'Next match'}
                                         offset={{ left: 0, top: 8 }}

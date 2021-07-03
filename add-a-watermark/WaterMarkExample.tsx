@@ -42,12 +42,10 @@ const WaterMarkExample: React.FC<WaterMarkExampleProps> = ({ fileUrl }) => {
     );
 
     return (
-        <div style={{ border: '1px solid rgba(0, 0, 0, 0.3)' }}>
-            <Viewer
-                fileUrl={fileUrl}
-                renderPage={renderPage}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            renderPage={renderPage}
+        />
     );
 };
 

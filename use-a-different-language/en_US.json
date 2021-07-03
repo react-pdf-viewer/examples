@@ -85,6 +85,10 @@
         "handTool": "Hand tool",
         "textSelectionTool": "Text selection tool"
     },
+    "theme": {
+        "switchDarkTheme": "Switch to the dark theme",
+        "switchLightTheme": "Switch to the light theme"
+    },
     "toolbar": {
         "moreActions": "More actions"
     },

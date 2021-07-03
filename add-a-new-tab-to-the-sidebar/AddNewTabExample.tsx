@@ -29,18 +29,12 @@ const AddNewTabExample: React.FC<AddNewTabExampleProps> = ({ fileUrl }) => {
     });
 
     return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            plugins={[
+                defaultLayoutPluginInstance,
+            ]}
+        />
     );
 };
 

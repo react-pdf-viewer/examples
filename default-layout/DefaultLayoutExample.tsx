@@ -13,18 +13,12 @@ const DefaultLayoutExample: React.FC<DefaultLayoutExampleProps> = ({ fileUrl }) 
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            plugins={[
+                defaultLayoutPluginInstance,
+            ]}
+        />
     );
 };
 

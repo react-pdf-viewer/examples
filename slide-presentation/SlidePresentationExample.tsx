@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Icon, Position, SpecialZoomLevel, Tooltip, Viewer } from '@react-pdf-viewer/core';
+import { Icon, MinimalButton, Position, SpecialZoomLevel, Tooltip, Viewer } from '@react-pdf-viewer/core';
 import { pageNavigationPlugin, RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -19,6 +19,7 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 height: '100%',
@@ -40,11 +41,11 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
-                                <Button onClick={props.onClick}>
+                                <MinimalButton onClick={props.onClick}>
                                     <Icon size={16}>
                                         <path d='M18.4.5,5.825,11.626a.5.5,0,0,0,0,.748L18.4,23.5' />
                                     </Icon>
-                                </Button>
+                                </MinimalButton>
                             }
                             content={() => 'Previous page'}
                             offset={{ left: 0, top: 8 }}
@@ -69,11 +70,11 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
-                                <Button onClick={props.onClick}>
+                                <MinimalButton onClick={props.onClick}>
                                     <Icon size={16}>
                                         <path d='M5.651,23.5,18.227,12.374a.5.5,0,0,0,0-.748L5.651.5' />
                                     </Icon>
-                                </Button>
+                                </MinimalButton>
                             }
                             content={() => 'Next page'}
                             offset={{ left: 0, top: 8 }}

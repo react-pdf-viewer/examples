@@ -37,9 +37,10 @@ const ToolbarSlotsExample: React.FC<{}> = () => {
                             <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                 <GoToPreviousPage />
                             </div>
-                            <div style={{ padding: '0px 2px' }}>
-                                <CurrentPageInput /> / <NumberOfPages />
+                            <div style={{ padding: '0px 2px', width: '4rem' }}>
+                                <CurrentPageInput />
                             </div>
+                            <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
                             <div style={{ padding: '0px 2px' }}>
                                 <GoToNextPage />
                             </div>
@@ -64,18 +65,12 @@ const ToolbarSlotsExample: React.FC<{}> = () => {
     });
 
     return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl='/assets/pdf-open-parameters.pdf'
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl='/assets/pdf-open-parameters.pdf'
+            plugins={[
+                defaultLayoutPluginInstance,
+            ]}
+        />
     );
 };
 

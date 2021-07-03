@@ -7,11 +7,11 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/scroll-mode/lib/styles/index.css';
 import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
-interface CustomSwitchModeButtonsExampleProps {
+interface CustomizeSwitchModeButtonsExampleProps {
     fileUrl: string;
 }
 
-const CustomSwitchModeButtonsExample: React.FC<CustomSwitchModeButtonsExampleProps> = ({ fileUrl }) => {
+const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExampleProps> = ({ fileUrl }) => {
     const scrollModePluginInstance = scrollModePlugin();
     const zoomPluginInstance = zoomPlugin();
     
@@ -174,4 +174,4 @@ const CustomSwitchModeButtonsExample: React.FC<CustomSwitchModeButtonsExamplePro
     );
 };
 
-export default CustomSwitchModeButtonsExample;
+export default CustomizeSwitchModeButtonsExample;

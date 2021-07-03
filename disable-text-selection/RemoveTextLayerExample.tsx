@@ -24,8 +24,8 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
-                border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -62,7 +62,13 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
                                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                     <GoToPreviousPage />
                                 </div>
-                                <div style={{ padding: '0px 2px' }}>
+                                <div
+                                    style={{
+                                        alignItems: 'center',
+                                        display: 'flex',
+                                        padding: '0px 2px',
+                                    }}
+                                >
                                     <CurrentPageInput /> / <NumberOfPages />
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>

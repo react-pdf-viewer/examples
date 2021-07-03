@@ -1,5 +1,5 @@
 @media print {
-    .rpv-body-printing .example-modal {
+    .rpv-print__body-printing .example-modal {
         display: none;
     }
 }

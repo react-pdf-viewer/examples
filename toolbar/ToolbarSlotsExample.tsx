@@ -15,6 +15,7 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
 
     return (
         <div
+            className='rpv-core__viewer'
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -56,8 +57,11 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
                                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                     <GoToPreviousPage />
                                 </div>
+                                <div style={{ padding: '0px 2px', width: '4rem' }}>
+                                    <CurrentPageInput />
+                                </div>
                                 <div style={{ padding: '0px 2px' }}>
-                                    <CurrentPageInput /> / <NumberOfPages />
+                                    / <NumberOfPages />
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>
                                     <GoToNextPage />

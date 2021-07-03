@@ -25,19 +25,13 @@ const RenderToolbarExample: React.FC<{}> = () => {
         renderToolbar,
     });
 
-    return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl='/assets/pdf-open-parameters.pdf'
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
-        </div>
+    return (        
+        <Viewer
+            fileUrl='/assets/pdf-open-parameters.pdf'
+            plugins={[
+                defaultLayoutPluginInstance,
+            ]}
+        />
     );
 };
 

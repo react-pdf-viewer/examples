@@ -5,11 +5,11 @@ import { RenderSwitchSelectionModeProps, SelectionMode, selectionModePlugin } fr
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/selection-mode/lib/styles/index.css';
 
-interface CustomSwitchModeButtonsExampleProps {
+interface CustomizeSwitchModeButtonsExampleProps {
     fileUrl: string;
 }
 
-const CustomSwitchModeButtonsExample: React.FC<CustomSwitchModeButtonsExampleProps> = ({ fileUrl }) => {
+const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExampleProps> = ({ fileUrl }) => {
     const selectionModePluginInstance = selectionModePlugin();
     const { SwitchSelectionMode } = selectionModePluginInstance;
 
@@ -26,7 +26,7 @@ const CustomSwitchModeButtonsExample: React.FC<CustomSwitchModeButtonsExamplePro
                 style={{
                     alignItems: 'center',
                     backgroundColor: '#eeeeee',
-                    borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
                     display: 'flex',
                     justifyContent: 'center',
                     padding: '4px',
@@ -92,4 +92,4 @@ const CustomSwitchModeButtonsExample: React.FC<CustomSwitchModeButtonsExamplePro
     );
 };
 
-export default CustomSwitchModeButtonsExample;
+export default CustomizeSwitchModeButtonsExample;

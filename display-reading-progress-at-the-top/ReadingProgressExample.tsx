@@ -29,19 +29,13 @@ const ReadingProgressExample: React.FC<ReadingProgressExampleProps> = ({ fileUrl
     });
 
     return (
-        <div
-            style={{
-                height: '100%',
-            }}
-        >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    defaultLayoutPluginInstance,
-                    readingIndicatorPluginInstance,
-                ]}
-            />
-        </div>
+        <Viewer
+            fileUrl={fileUrl}
+            plugins={[
+                defaultLayoutPluginInstance,
+                readingIndicatorPluginInstance,
+            ]}
+        />
     );
 };
 
