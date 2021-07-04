@@ -21,13 +21,7 @@ const ZoomAfterFullScreenExampleProps: React.FC<ZoomAfterFullScreenExampleProps>
                 height: '100%',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    defaultLayoutPluginInstance,
-                    zoomAfterFullScreenInstance,
-                ]}
-            />
+            <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance, zoomAfterFullScreenInstance]} />
         </div>
     );
 };

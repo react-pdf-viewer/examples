@@ -9,13 +9,12 @@ import vi_VN from './vi_VN.json';
 
 const LocalizationExample: React.FC<{}> = () => {
     const toolbarPluginInstance = toolbarPlugin();
-    const { Toolbar } = toolbarPluginInstance;    
+    const { Toolbar } = toolbarPluginInstance;
 
     return (
         <ThemeProvider>
-            <LocalizationProvider localization={(vi_VN as any) as LocalizationMap}>
-            {
-                (_) => {
+            <LocalizationProvider localization={vi_VN as any as LocalizationMap}>
+                {(_) => {
                     const { currentTheme } = React.useContext(ThemeContext);
                     return (
                         <div
@@ -31,9 +30,8 @@ const LocalizationExample: React.FC<{}> = () => {
                                 style={{
                                     alignItems: 'center',
                                     backgroundColor: currentTheme === 'dark' ? '#292929' : '#eeeeee',
-                                    borderBottom: currentTheme === 'dark'
-                                        ? '1px solid #000'
-                                        : '1px solid rgba(0, 0, 0, 0.1)',
+                                    borderBottom:
+                                        currentTheme === 'dark' ? '1px solid #000' : '1px solid rgba(0, 0, 0, 0.1)',
                                     display: 'flex',
                                     padding: '.25rem',
                                 }}
@@ -46,17 +44,11 @@ const LocalizationExample: React.FC<{}> = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <Viewer
-                                    fileUrl="/assets/pdf-open-parameters.pdf"
-                                    plugins={[
-                                        toolbarPluginInstance,
-                                    ]}
-                                />
+                                <Viewer fileUrl="/assets/pdf-open-parameters.pdf" plugins={[toolbarPluginInstance]} />
                             </div>
                         </div>
                     );
-                }
-            }            
+                }}
             </LocalizationProvider>
         </ThemeProvider>
     );

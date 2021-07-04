@@ -21,8 +21,8 @@ const WaterMarkExample: React.FC<WaterMarkExampleProps> = ({ fileUrl }) => {
                     position: 'absolute',
                     top: 0,
                     width: '100%',
-                }
-            }>
+                }}
+            >
                 <div
                     style={{
                         color: 'rgba(0, 0, 0, 0.2)',
@@ -41,12 +41,7 @@ const WaterMarkExample: React.FC<WaterMarkExampleProps> = ({ fileUrl }) => {
         </>
     );
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            renderPage={renderPage}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} renderPage={renderPage} />;
 };
 
 export default WaterMarkExample;

@@ -15,7 +15,7 @@ const ReadingProgressExample: React.FC<ReadingProgressExampleProps> = ({ fileUrl
     const readingIndicatorPluginInstance = readingIndicatorPlugin();
     const { ReadingIndicator } = readingIndicatorPluginInstance;
 
-    const renderToolbar = (Toolbar: ((props: ToolbarProps) => React.ReactElement)) => (
+    const renderToolbar = (Toolbar: (props: ToolbarProps) => React.ReactElement) => (
         <>
             <Toolbar />
             <div style={{ margin: '4px -4px -4px -4px' }}>
@@ -28,15 +28,7 @@ const ReadingProgressExample: React.FC<ReadingProgressExampleProps> = ({ fileUrl
         renderToolbar,
     });
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-                readingIndicatorPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance, readingIndicatorPluginInstance]} />;
 };
 
 export default ReadingProgressExample;

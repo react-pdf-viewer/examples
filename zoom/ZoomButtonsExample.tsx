@@ -15,7 +15,7 @@ const ZoomButtonsExample: React.FC<ZoomButtonsExampleProps> = ({ fileUrl }) => {
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -49,12 +49,7 @@ const ZoomButtonsExample: React.FC<ZoomButtonsExampleProps> = ({ fileUrl }) => {
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        zoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[zoomPluginInstance]} />
             </div>
         </div>
     );

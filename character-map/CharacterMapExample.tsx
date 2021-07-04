@@ -17,13 +17,10 @@ const CharacterMapExample: React.FC<CharacterMapExampleProps> = ({ fileUrl }) =>
         <div
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
-                height: '750px'
+                height: '750px',
             }}
         >
-            <Viewer
-                characterMap={characterMap}
-                fileUrl={fileUrl}
-            />
+            <Viewer characterMap={characterMap} fileUrl={fileUrl} />
         </div>
     );
 };

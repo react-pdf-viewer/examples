@@ -23,11 +23,7 @@ const EventsExample: React.FC<EventsExampleProps> = ({ fileUrl }) => {
                 height: '750px',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                onDocumentLoad={handleDocumentLoad}
-                onZoom={handleZoom}
-            />
+            <Viewer fileUrl={fileUrl} onDocumentLoad={handleDocumentLoad} onZoom={handleZoom} />
         </div>
     );
 };

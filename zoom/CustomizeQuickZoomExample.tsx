@@ -34,8 +34,7 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
             >
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -49,14 +48,12 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 Actual size
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -70,14 +67,12 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 Page fit
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -91,14 +86,12 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 Page width
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -112,14 +105,12 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 50%
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -133,14 +124,12 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 100%
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Zoom>
-                    {
-                        (props: RenderZoomProps) => (
+                        {(props: RenderZoomProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -154,8 +143,7 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                             >
                                 150%
                             </button>
-                        )
-                    }
+                        )}
                     </Zoom>
                 </div>
             </div>
@@ -165,12 +153,7 @@ const CustomizeQuickZoomExample: React.FC<CustomizeQuickZoomExampleProps> = ({ f
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        zoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[zoomPluginInstance]} />
             </div>
         </div>
     );

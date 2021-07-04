@@ -10,10 +10,7 @@ interface DisableScrollExampleProps {
 const DisableScrollExample: React.FC<DisableScrollExampleProps> = ({ fileUrl }) => {
     return (
         <div style={{ overflow: 'hidden' }}>
-            <Viewer
-                fileUrl={fileUrl}
-                defaultScale={SpecialZoomLevel.PageFit}
-            />
+            <Viewer fileUrl={fileUrl} defaultScale={SpecialZoomLevel.PageFit} />
         </div>
     );
 };

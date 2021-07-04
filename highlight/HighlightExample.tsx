@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { Button, DocumentLoadEvent, PdfJs, Position, PrimaryButton, Tooltip, Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-import { HighlightArea, highlightPlugin, MessageIcon, RenderHighlightContentProps, RenderHighlightTargetProps, RenderHighlightsProps } from '@react-pdf-viewer/highlight';
+import {
+    HighlightArea,
+    highlightPlugin,
+    MessageIcon,
+    RenderHighlightContentProps,
+    RenderHighlightTargetProps,
+    RenderHighlightsProps,
+} from '@react-pdf-viewer/highlight';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
@@ -22,7 +29,7 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
     const [notes, setNotes] = React.useState<Note[]>([]);
     const notesContainerRef = React.useRef<HTMLDivElement | null>(null);
     let noteId = notes.length;
-    
+
     const noteEles: Map<number, HTMLElement> = new Map();
     const [currentDoc, setCurrentDoc] = React.useState<PdfJs.PdfDocument | null>(null);
 
@@ -47,7 +54,11 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
         >
             <Tooltip
                 position={Position.TopCenter}
-                target={<Button onClick={props.toggle}><MessageIcon /></Button>}
+                target={
+                    <Button onClick={props.toggle}>
+                        <MessageIcon />
+                    </Button>
+                }
                 content={() => <div style={{ width: '100px' }}>Add a note</div>}
                 offset={{ left: 0, top: -8 }}
             />
@@ -87,7 +98,7 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
                         style={{
                             border: '1px solid rgba(0, 0, 0, .3)',
                         }}
-                        onChange={e => setMessage(e.target.value)}
+                        onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                 </div>
                 <div
@@ -115,28 +126,26 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
 
     const renderHighlights = (props: RenderHighlightsProps) => (
         <div>
-        {
-            notes.map(note => (
+            {notes.map((note) => (
                 <React.Fragment key={note.id}>
-                {
-                    note.highlightAreas
-                        .filter(area => area.pageIndex === props.pageIndex)
+                    {note.highlightAreas
+                        .filter((area) => area.pageIndex === props.pageIndex)
                         .map((area, idx) => (
                             <div
                                 key={idx}
-                                style={
-                                    Object.assign({}, {
+                                style={Object.assign(
+                                    {},
+                                    {
                                         background: 'yellow',
                                         opacity: 0.4,
-                                    }, props.getCssProperties(area, props.rotation))
-                                }
+                                    },
+                                    props.getCssProperties(area, props.rotation)
+                                )}
                                 onClick={() => jumpToNote(note)}
                             />
-                        ))
-                }
+                        ))}
                 </React.Fragment>
-            ))
-        }
+            ))}
         </div>
     );
 
@@ -163,47 +172,46 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
             }}
         >
             {notes.length === 0 && <div style={{ textAlign: 'center' }}>There is no note</div>}
-            {
-                notes.map(note => {
-                    return (
-                        <div
-                            key={note.id}
+            {notes.map((note) => {
+                return (
+                    <div
+                        key={note.id}
+                        style={{
+                            borderBottom: '1px solid rgba(0, 0, 0, .3)',
+                            cursor: 'pointer',
+                            padding: '8px',
+                        }}
+                        onClick={() => jumpToHighlightArea(note.highlightAreas[0])}
+                        ref={(ref): void => {
+                            noteEles.set(note.id, ref as HTMLElement);
+                        }}
+                    >
+                        <blockquote
                             style={{
-                                borderBottom: '1px solid rgba(0, 0, 0, .3)',
-                                cursor: 'pointer',
-                                padding: '8px',
-                            }}
-                            onClick={() => jumpToHighlightArea(note.highlightAreas[0])}
-                            ref={(ref): void => {
-                                noteEles.set(note.id, ref as HTMLElement);
+                                borderLeft: '2px solid rgba(0, 0, 0, 0.2)',
+                                fontSize: '.75rem',
+                                lineHeight: 1.5,
+                                margin: '0 0 8px 0',
+                                paddingLeft: '8px',
+                                textAlign: 'justify',
                             }}
                         >
-                            <blockquote
-                                style={{
-                                    borderLeft: '2px solid rgba(0, 0, 0, 0.2)',
-                                    fontSize: '.75rem',
-                                    lineHeight: 1.5,
-                                    margin: '0 0 8px 0',
-                                    paddingLeft: '8px',
-                                    textAlign: 'justify',
-                                }}
-                            >
-                                {note.quote}
-                            </blockquote>
-                            {note.content}
-                        </div>
-                    );
-                })
-            }
+                            {note.quote}
+                        </blockquote>
+                        {note.content}
+                    </div>
+                );
+            })}
         </div>
     );
 
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
-        sidebarTabs: defaultTabs => defaultTabs.concat({
-            content: sidebarNotes,
-            icon: <MessageIcon />,
-            title: <>Notes</>,
-        }),
+        sidebarTabs: (defaultTabs) =>
+            defaultTabs.concat({
+                content: sidebarNotes,
+                icon: <MessageIcon />,
+                title: <>Notes</>,
+            }),
     });
     const { activateTab } = defaultLayoutPluginInstance;
 
@@ -215,10 +223,7 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
         >
             <Viewer
                 fileUrl={fileUrl}
-                plugins={[
-                    highlightPluginInstance,
-                    defaultLayoutPluginInstance,
-                ]}
+                plugins={[highlightPluginInstance, defaultLayoutPluginInstance]}
                 onDocumentLoad={handleDocumentLoad}
             />
         </div>

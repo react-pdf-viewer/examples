@@ -14,7 +14,7 @@ const DownloadButtonExample: React.FC<DownloadButtonExampleProps> = ({ fileUrl }
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -39,12 +39,7 @@ const DownloadButtonExample: React.FC<DownloadButtonExampleProps> = ({ fileUrl }
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        getFilePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[getFilePluginInstance]} />
             </div>
         </div>
     );

@@ -17,20 +17,20 @@ const ToolbarOptionsExample: React.FC<ToolbarOptionsExampleProps> = ({ fileUrl }
                 // `file.name` is the URL of opened file
                 const fileName = file.name.substring(file.name.lastIndexOf('/') + 1);
                 return `a-copy-of-${fileName}`;
-            }
+            },
         },
         searchPlugin: {
-            keyword: 'PDF'
+            keyword: 'PDF',
         },
         selectionModePlugin: {
-            selectionMode: SelectionMode.Hand
+            selectionMode: SelectionMode.Hand,
         },
     });
     const { Toolbar } = toolbarPluginInstance;
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -55,12 +55,7 @@ const ToolbarOptionsExample: React.FC<ToolbarOptionsExampleProps> = ({ fileUrl }
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[toolbarPluginInstance]} />
             </div>
         </div>
     );

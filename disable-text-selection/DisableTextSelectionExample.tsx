@@ -10,20 +10,13 @@ const DisableTextSelectionExample: React.FC<DisableTextSelectionExampleProps> = 
         return (
             <>
                 {props.canvasLayer.children}
-                <div style={{ userSelect: 'none' }}>
-                    {props.textLayer.children}
-                </div>
+                <div style={{ userSelect: 'none' }}>{props.textLayer.children}</div>
                 {props.annotationLayer.children}
             </>
         );
     };
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            renderPage={renderPage}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} renderPage={renderPage} />;
 };
 
 export default DisableTextSelectionExample;

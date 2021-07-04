@@ -32,12 +32,7 @@ const BookmarkExample: React.FC<BookmarkExampleProps> = ({ fileUrl }) => {
                 <Bookmarks />
             </div>
             <div style={{ flex: 1 }}>
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        bookmarkPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[bookmarkPluginInstance]} />
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -39,11 +39,16 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
                 }}
             >
                 <Toolbar>
-                {
-                    (props: ToolbarSlot) => {
+                    {(props: ToolbarSlot) => {
                         const {
-                            CurrentPageInput, Download, EnterFullScreen, GoToNextPage, GoToPreviousPage,
-                            NumberOfPages, Print, ZoomIn,
+                            CurrentPageInput,
+                            Download,
+                            EnterFullScreen,
+                            GoToNextPage,
+                            GoToPreviousPage,
+                            NumberOfPages,
+                            Print,
+                            ZoomIn,
                             ZoomOut,
                         } = props;
                         return (
@@ -58,7 +63,7 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
                                     <GoToPreviousPage />
                                 </div>
                                 <div style={{ padding: '0px 2px', width: '4rem' }}>
-                                    <CurrentPageInput /> 
+                                    <CurrentPageInput />
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>
                                     / <NumberOfPages />
@@ -76,9 +81,8 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
                                     <Print />
                                 </div>
                             </>
-                        )
-                    }
-                }
+                        );
+                    }}
                 </Toolbar>
             </div>
             <div
@@ -87,12 +91,7 @@ const FloatingToolbarExample: React.FC<FloatingToolbarExampleProps> = ({ fileUrl
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[toolbarPluginInstance]} />
             </div>
         </div>
     );

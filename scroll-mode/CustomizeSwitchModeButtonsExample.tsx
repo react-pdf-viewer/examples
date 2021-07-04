@@ -14,7 +14,7 @@ interface CustomizeSwitchModeButtonsExampleProps {
 const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExampleProps> = ({ fileUrl }) => {
     const scrollModePluginInstance = scrollModePlugin();
     const zoomPluginInstance = zoomPlugin();
-    
+
     const { SwitchScrollMode } = scrollModePluginInstance;
     const { CurrentScale, ZoomIn, ZoomOut } = zoomPluginInstance;
 
@@ -39,8 +39,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
             >
                 <div style={{ padding: '0px 2px' }}>
                     <SwitchScrollMode mode={ScrollMode.Vertical}>
-                    {
-                        (props: RenderSwitchScrollModeProps) => (
+                        {(props: RenderSwitchScrollModeProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isSelected ? '#357edd' : 'transparent',
@@ -56,14 +55,12 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Vertical scrolling
                             </button>
-                        )
-                    }
+                        )}
                     </SwitchScrollMode>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <SwitchScrollMode mode={ScrollMode.Horizontal}>
-                    {
-                        (props: RenderSwitchScrollModeProps) => (
+                        {(props: RenderSwitchScrollModeProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isSelected ? '#357edd' : 'transparent',
@@ -79,14 +76,12 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Horizontal scrolling
                             </button>
-                        )
-                    }
+                        )}
                     </SwitchScrollMode>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <SwitchScrollMode mode={ScrollMode.Wrapped}>
-                    {
-                        (props: RenderSwitchScrollModeProps) => (
+                        {(props: RenderSwitchScrollModeProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isSelected ? '#357edd' : 'transparent',
@@ -102,14 +97,12 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Wrapped scrolling
                             </button>
-                        )
-                    }
+                        )}
                     </SwitchScrollMode>
                 </div>
                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                     <ZoomOut>
-                    {
-                        (props: RenderZoomOutProps) => (
+                        {(props: RenderZoomOutProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -123,21 +116,17 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Zoom out
                             </button>
-                        )
-                    }
+                        )}
                     </ZoomOut>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <CurrentScale>
-                    {
-                        (props: RenderCurrentScaleProps) => <>{`${Math.round(props.scale * 100)}%`}</>
-                    }
+                        {(props: RenderCurrentScaleProps) => <>{`${Math.round(props.scale * 100)}%`}</>}
                     </CurrentScale>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <ZoomIn>
-                    {
-                        (props: RenderZoomInProps) => (
+                        {(props: RenderZoomInProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -151,8 +140,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Zoom in
                             </button>
-                        )
-                    }
+                        )}
                     </ZoomIn>
                 </div>
             </div>
@@ -162,13 +150,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        scrollModePluginInstance,
-                        zoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[scrollModePluginInstance, zoomPluginInstance]} />
             </div>
         </div>
     );

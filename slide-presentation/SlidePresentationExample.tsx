@@ -14,12 +14,12 @@ interface SlidePresentationExampleProps {
 const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fileUrl }) => {
     const disableScrollPluginInstance = disableScrollPlugin();
     const pageNavigationPluginInstance = pageNavigationPlugin();
-    
+
     const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 height: '100%',
@@ -36,22 +36,20 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
                 }}
             >
                 <GoToPreviousPage>
-                {
-                    (props: RenderGoToPageProps) => (
+                    {(props: RenderGoToPageProps) => (
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
                                 <MinimalButton onClick={props.onClick}>
                                     <Icon size={16}>
-                                        <path d='M18.4.5,5.825,11.626a.5.5,0,0,0,0,.748L18.4,23.5' />
+                                        <path d="M18.4.5,5.825,11.626a.5.5,0,0,0,0,.748L18.4,23.5" />
                                     </Icon>
                                 </MinimalButton>
                             }
                             content={() => 'Previous page'}
                             offset={{ left: 0, top: 8 }}
                         />
-                    )
-                }
+                    )}
                 </GoToPreviousPage>
             </div>
 
@@ -65,31 +63,26 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
                 }}
             >
                 <GoToNextPage>
-                {
-                    (props: RenderGoToPageProps) => (
+                    {(props: RenderGoToPageProps) => (
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
                                 <MinimalButton onClick={props.onClick}>
                                     <Icon size={16}>
-                                        <path d='M5.651,23.5,18.227,12.374a.5.5,0,0,0,0-.748L5.651.5' />
+                                        <path d="M5.651,23.5,18.227,12.374a.5.5,0,0,0,0-.748L5.651.5" />
                                     </Icon>
                                 </MinimalButton>
                             }
                             content={() => 'Next page'}
                             offset={{ left: 0, top: 8 }}
                         />
-                    )
-                }
+                    )}
                 </GoToNextPage>
             </div>
 
             <Viewer
                 fileUrl={fileUrl}
-                plugins={[
-                    disableScrollPluginInstance,
-                    pageNavigationPluginInstance,
-                ]}
+                plugins={[disableScrollPluginInstance, pageNavigationPluginInstance]}
                 defaultScale={SpecialZoomLevel.PageFit}
             />
         </div>

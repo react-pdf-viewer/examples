@@ -6,13 +6,17 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const CustomToolbarExample: React.FC<{}> = () => {
-    const renderToolbar = (Toolbar: ((props: ToolbarProps) => ReactElement)) => (
+    const renderToolbar = (Toolbar: (props: ToolbarProps) => ReactElement) => (
         <Toolbar>
-        {
-            (slots: ToolbarSlot) => {
+            {(slots: ToolbarSlot) => {
                 const {
-                    CurrentPageInput, CurrentScale, GoToNextPage, GoToPreviousPage,
-                    NumberOfPages, ZoomIn, ZoomOut,
+                    CurrentPageInput,
+                    CurrentScale,
+                    GoToNextPage,
+                    GoToPreviousPage,
+                    NumberOfPages,
+                    ZoomIn,
+                    ZoomOut,
                 } = slots;
                 return (
                     <div
@@ -23,8 +27,7 @@ const CustomToolbarExample: React.FC<{}> = () => {
                     >
                         <div style={{ padding: '0px 2px' }}>
                             <ZoomOut>
-                            {
-                                (props) => (
+                                {(props) => (
                                     <button
                                         style={{
                                             backgroundColor: '#357edd',
@@ -38,23 +41,15 @@ const CustomToolbarExample: React.FC<{}> = () => {
                                     >
                                         Zoom out
                                     </button>
-                                )
-                            }
+                                )}
                             </ZoomOut>
                         </div>
                         <div style={{ padding: '0px 2px' }}>
-                            <CurrentScale>
-                            {
-                                (props) => (
-                                    <span>{`${Math.round(props.scale * 100)}%`}</span>
-                                )
-                            }
-                            </CurrentScale>
+                            <CurrentScale>{(props) => <span>{`${Math.round(props.scale * 100)}%`}</span>}</CurrentScale>
                         </div>
                         <div style={{ padding: '0px 2px' }}>
                             <ZoomIn>
-                            {
-                                (props) => (
+                                {(props) => (
                                     <button
                                         style={{
                                             backgroundColor: '#357edd',
@@ -68,14 +63,12 @@ const CustomToolbarExample: React.FC<{}> = () => {
                                     >
                                         Zoom in
                                     </button>
-                                )
-                            }
+                                )}
                             </ZoomIn>
                         </div>
                         <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                             <GoToPreviousPage>
-                            {
-                                (props) => (
+                                {(props) => (
                                     <button
                                         style={{
                                             backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -90,18 +83,18 @@ const CustomToolbarExample: React.FC<{}> = () => {
                                     >
                                         Previous page
                                     </button>
-                                )
-                            }
+                                )}
                             </GoToPreviousPage>
                         </div>
                         <div style={{ padding: '0px 2px', width: '4rem' }}>
                             <CurrentPageInput />
                         </div>
-                        <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
+                        <div style={{ padding: '0px 2px' }}>
+                            / <NumberOfPages />
+                        </div>
                         <div style={{ padding: '0px 2px' }}>
                             <GoToNextPage>
-                            {
-                                (props) => (
+                                {(props) => (
                                     <button
                                         style={{
                                             backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -116,14 +109,12 @@ const CustomToolbarExample: React.FC<{}> = () => {
                                     >
                                         Next page
                                     </button>
-                                )
-                            }
+                                )}
                             </GoToNextPage>
                         </div>
                     </div>
-                )
-            }
-        }
+                );
+            }}
         </Toolbar>
     );
 
@@ -137,12 +128,7 @@ const CustomToolbarExample: React.FC<{}> = () => {
                 height: '100%',
             }}
         >
-            <Viewer
-                fileUrl='/assets/pdf-open-parameters.pdf'
-                plugins={[
-                    defaultLayoutPluginInstance,
-                ]}
-            />
+            <Viewer fileUrl="/assets/pdf-open-parameters.pdf" plugins={[defaultLayoutPluginInstance]} />
         </div>
     );
 };

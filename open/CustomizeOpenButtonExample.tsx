@@ -32,8 +32,7 @@ const CustomizeOpenButtonExample: React.FC<CustomizeOpenButtonExampleProps> = ({
                 }}
             >
                 <Open>
-                {
-                    (props: RenderOpenProps) => (
+                    {(props: RenderOpenProps) => (
                         <div
                             style={{
                                 backgroundColor: '#357edd',
@@ -46,8 +45,8 @@ const CustomizeOpenButtonExample: React.FC<CustomizeOpenButtonExampleProps> = ({
                             }}
                         >
                             <input
-                                type='file'
-                                onChange={e => props.onClick(e)}
+                                type="file"
+                                onChange={(e) => props.onClick(e)}
                                 style={{
                                     bottom: 0,
                                     cursor: 'pointer',
@@ -62,8 +61,7 @@ const CustomizeOpenButtonExample: React.FC<CustomizeOpenButtonExampleProps> = ({
                             />
                             Open file
                         </div>
-                    )
-                }
+                    )}
                 </Open>
             </div>
             <div
@@ -72,12 +70,7 @@ const CustomizeOpenButtonExample: React.FC<CustomizeOpenButtonExampleProps> = ({
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        openPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[openPluginInstance]} />
             </div>
         </div>
     );

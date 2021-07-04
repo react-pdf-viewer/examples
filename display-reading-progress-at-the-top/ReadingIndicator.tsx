@@ -13,7 +13,7 @@ const ReadingIndicator: React.FC<ReadingIndicatorProps> = ({ store }) => {
     const handleScroll = (e: Event) => {
         const target = e.target;
         if (target instanceof HTMLDivElement) {
-            const p = Math.floor(100 * target.scrollTop / (target.scrollHeight - target.clientHeight));
+            const p = Math.floor((100 * target.scrollTop) / (target.scrollHeight - target.clientHeight));
             setPercentages(Math.min(100, p));
         }
     };

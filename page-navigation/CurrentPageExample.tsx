@@ -33,11 +33,9 @@ const CurrentPageExample: React.FC<CurrentPageExampleProps> = ({ fileUrl }) => {
                 }}
             >
                 <CurrentPageLabel>
-                {
-                    (props: RenderCurrentPageLabelProps) => (
+                    {(props: RenderCurrentPageLabelProps) => (
                         <span>{`${props.currentPage + 1} of ${props.numberOfPages}`}</span>
-                    )
-                }
+                    )}
                 </CurrentPageLabel>
             </div>
             <div
@@ -46,12 +44,7 @@ const CurrentPageExample: React.FC<CurrentPageExampleProps> = ({ fileUrl }) => {
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        pageNavigationPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[pageNavigationPluginInstance]} />
             </div>
         </div>
     );

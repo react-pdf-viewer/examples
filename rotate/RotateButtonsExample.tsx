@@ -14,7 +14,7 @@ const RotateButtonsExample: React.FC<RotateButtonsExampleProps> = ({ fileUrl }) 
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -45,12 +45,7 @@ const RotateButtonsExample: React.FC<RotateButtonsExampleProps> = ({ fileUrl }) 
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        rotatePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[rotatePluginInstance]} />
             </div>
         </div>
     );

@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { highlightPlugin, HighlightArea, MessageIcon, RenderHighlightContentProps, RenderHighlightsProps, RenderHighlightTargetProps } from '@react-pdf-viewer/highlight';
+import {
+    highlightPlugin,
+    HighlightArea,
+    MessageIcon,
+    RenderHighlightContentProps,
+    RenderHighlightsProps,
+    RenderHighlightTargetProps,
+} from '@react-pdf-viewer/highlight';
 import { Button, Position, PrimaryButton, Tooltip, Viewer } from '@react-pdf-viewer/core';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -34,7 +41,11 @@ const RenderHighlightsExample: React.FC<RenderHighlightsExampleProps> = ({ fileU
         >
             <Tooltip
                 position={Position.TopCenter}
-                target={<Button onClick={props.toggle}><MessageIcon /></Button>}
+                target={
+                    <Button onClick={props.toggle}>
+                        <MessageIcon />
+                    </Button>
+                }
                 content={() => <div style={{ width: '100px' }}>Add a note</div>}
                 offset={{ left: 0, top: -8 }}
             />
@@ -74,7 +85,7 @@ const RenderHighlightsExample: React.FC<RenderHighlightsExampleProps> = ({ fileU
                         style={{
                             border: '1px solid rgba(0, 0, 0, .3)',
                         }}
-                        onChange={e => setMessage(e.target.value)}
+                        onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                 </div>
                 <div
@@ -94,27 +105,25 @@ const RenderHighlightsExample: React.FC<RenderHighlightsExampleProps> = ({ fileU
 
     const renderHighlights = (props: RenderHighlightsProps) => (
         <div>
-        {
-            notes.map(note => (
+            {notes.map((note) => (
                 <React.Fragment key={note.id}>
-                {
-                    note.highlightAreas
-                        .filter(area => area.pageIndex === props.pageIndex)
+                    {note.highlightAreas
+                        .filter((area) => area.pageIndex === props.pageIndex)
                         .map((area, idx) => (
                             <div
                                 key={idx}
-                                style={
-                                    Object.assign({}, {
+                                style={Object.assign(
+                                    {},
+                                    {
                                         background: 'yellow',
                                         opacity: 0.4,
-                                    }, props.getCssProperties(area, props.rotation))
-                                }
+                                    },
+                                    props.getCssProperties(area, props.rotation)
+                                )}
                             />
-                        ))
-                }
+                        ))}
                 </React.Fragment>
-            ))
-        }
+            ))}
         </div>
     );
 
@@ -132,12 +141,7 @@ const RenderHighlightsExample: React.FC<RenderHighlightsExampleProps> = ({ fileU
                 overflow: 'hidden',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    highlightPluginInstance,
-                ]}
-            />
+            <Viewer fileUrl={fileUrl} plugins={[highlightPluginInstance]} />
         </div>
     );
 };

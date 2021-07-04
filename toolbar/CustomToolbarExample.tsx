@@ -34,18 +34,21 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                 }}
             >
                 <Toolbar>
-                {
-                    (props: ToolbarSlot) => {
+                    {(props: ToolbarSlot) => {
                         const {
-                            CurrentPageInput, CurrentScale, GoToNextPage, GoToPreviousPage,
-                            NumberOfPages, ZoomIn, ZoomOut,
+                            CurrentPageInput,
+                            CurrentScale,
+                            GoToNextPage,
+                            GoToPreviousPage,
+                            NumberOfPages,
+                            ZoomIn,
+                            ZoomOut,
                         } = props;
                         return (
                             <>
                                 <div style={{ padding: '0px 2px' }}>
                                     <ZoomOut>
-                                    {
-                                        (props: RenderZoomOutProps) => (
+                                        {(props: RenderZoomOutProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: '#357edd',
@@ -59,23 +62,19 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                             >
                                                 Zoom out
                                             </button>
-                                        )
-                                    }
+                                        )}
                                     </ZoomOut>
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>
                                     <CurrentScale>
-                                    {
-                                        (props: RenderCurrentScaleProps) => (
+                                        {(props: RenderCurrentScaleProps) => (
                                             <span>{`${Math.round(props.scale * 100)}%`}</span>
-                                        )
-                                    }
+                                        )}
                                     </CurrentScale>
                                 </div>
                                 <div style={{ padding: '0px 2px' }}>
                                     <ZoomIn>
-                                    {
-                                        (props: RenderZoomInProps) => (
+                                        {(props: RenderZoomInProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: '#357edd',
@@ -89,14 +88,12 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                             >
                                                 Zoom in
                                             </button>
-                                        )
-                                    }
+                                        )}
                                     </ZoomIn>
                                 </div>
                                 <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
                                     <GoToPreviousPage>
-                                    {
-                                        (props: RenderGoToPageProps) => (
+                                        {(props: RenderGoToPageProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -111,18 +108,18 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                             >
                                                 Previous page
                                             </button>
-                                        )
-                                    }
+                                        )}
                                     </GoToPreviousPage>
                                 </div>
                                 <div style={{ padding: '0px 2px', width: '4rem' }}>
                                     <CurrentPageInput />
                                 </div>
-                                <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
+                                <div style={{ padding: '0px 2px' }}>
+                                    / <NumberOfPages />
+                                </div>
                                 <div style={{ padding: '0px 2px' }}>
                                     <GoToNextPage>
-                                    {
-                                        (props: RenderGoToPageProps) => (
+                                        {(props: RenderGoToPageProps) => (
                                             <button
                                                 style={{
                                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -137,14 +134,12 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                                             >
                                                 Next page
                                             </button>
-                                        )
-                                    }
+                                        )}
                                     </GoToNextPage>
                                 </div>
                             </>
-                        )
-                    }
-                }
+                        );
+                    }}
                 </Toolbar>
             </div>
             <div
@@ -153,12 +148,7 @@ const CustomToolbarExample: React.FC<CustomToolbarExampleProps> = ({ fileUrl }) 
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[toolbarPluginInstance]} />
             </div>
         </div>
     );

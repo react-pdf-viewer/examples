@@ -32,8 +32,7 @@ const CustomizeFullScreenButtonExample: React.FC<CustomizeFullScreenButtonExampl
                 }}
             >
                 <EnterFullScreen>
-                {
-                    (props: RenderEnterFullScreenProps) => (
+                    {(props: RenderEnterFullScreenProps) => (
                         <button
                             style={{
                                 backgroundColor: '#357edd',
@@ -47,8 +46,7 @@ const CustomizeFullScreenButtonExample: React.FC<CustomizeFullScreenButtonExampl
                         >
                             Enter fullscreen
                         </button>
-                    )
-                }
+                    )}
                 </EnterFullScreen>
             </div>
             <div
@@ -57,12 +55,7 @@ const CustomizeFullScreenButtonExample: React.FC<CustomizeFullScreenButtonExampl
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        fullScreenPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[fullScreenPluginInstance]} />
             </div>
         </div>
     );

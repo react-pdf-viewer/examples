@@ -6,7 +6,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const RenderToolbarExample: React.FC<{}> = () => {
-    const renderToolbar = (Toolbar: ((props: ToolbarProps) => ReactElement)) => (
+    const renderToolbar = (Toolbar: (props: ToolbarProps) => ReactElement) => (
         <>
             <Toolbar />
             <div
@@ -25,14 +25,7 @@ const RenderToolbarExample: React.FC<{}> = () => {
         renderToolbar,
     });
 
-    return (        
-        <Viewer
-            fileUrl='/assets/pdf-open-parameters.pdf'
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl="/assets/pdf-open-parameters.pdf" plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default RenderToolbarExample;

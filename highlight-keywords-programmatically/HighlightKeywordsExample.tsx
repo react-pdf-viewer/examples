@@ -25,7 +25,7 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -53,9 +53,9 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                         style={{
                             border: 'none',
                             padding: '8px',
-                            width: '200px'
+                            width: '200px',
                         }}
-                        placeholder='Enter to search'
+                        placeholder="Enter to search"
                         type="text"
                         value={currentKeyword.keyword}
                         onChange={(e) => {
@@ -83,11 +83,13 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                                     height: '100%',
                                     padding: '0 2px',
                                 }}
-                                onClick={() => search({
-                                    keyword: currentKeyword.keyword,
-                                    matchCase: !currentKeyword.matchCase,
-                                    wholeWords: currentKeyword.wholeWords,
-                                })}
+                                onClick={() =>
+                                    search({
+                                        keyword: currentKeyword.keyword,
+                                        matchCase: !currentKeyword.matchCase,
+                                        wholeWords: currentKeyword.wholeWords,
+                                    })
+                                }
                             >
                                 <Icon>
                                     <path d="M15.979,21.725,9.453,2.612a.5.5,0,0,0-.946,0L2,21.725" />
@@ -115,11 +117,13 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                                     height: '100%',
                                     padding: '0 2px',
                                 }}
-                                onClick={() => search({
-                                    keyword: currentKeyword.keyword,
-                                    matchCase: currentKeyword.matchCase,
-                                    wholeWords: !currentKeyword.wholeWords,
-                                })}
+                                onClick={() =>
+                                    search({
+                                        keyword: currentKeyword.keyword,
+                                        matchCase: currentKeyword.matchCase,
+                                        wholeWords: !currentKeyword.wholeWords,
+                                    })
+                                }
                             >
                                 <Icon>
                                     <path d="M0.500 7.498 L23.500 7.498 L23.500 16.498 L0.500 16.498 Z" />
@@ -162,12 +166,7 @@ const HighlightKeywordsExample: React.FC<HighlightKeywordsExampleProps> = ({ fil
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        searchPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[searchPluginInstance]} />
             </div>
         </div>
     );

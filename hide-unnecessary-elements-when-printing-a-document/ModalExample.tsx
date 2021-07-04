@@ -50,8 +50,7 @@ const ModalExample: React.FC<ModalExampleProps> = ({ fileUrl }) => {
             >
                 <div style={{ marginRight: 'auto' }}>sample-file-name.pdf</div>
                 <Print>
-                {
-                    (props: RenderPrintProps) => (
+                    {(props: RenderPrintProps) => (
                         <button
                             style={{
                                 backgroundColor: '#357edd',
@@ -65,8 +64,7 @@ const ModalExample: React.FC<ModalExampleProps> = ({ fileUrl }) => {
                         >
                             Print
                         </button>
-                    )
-                }
+                    )}
                 </Print>
                 <button
                     style={{
@@ -89,12 +87,7 @@ const ModalExample: React.FC<ModalExampleProps> = ({ fileUrl }) => {
                     overflow: 'auto',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        printPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[printPluginInstance]} />
             </div>
         </div>
     );

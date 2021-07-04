@@ -19,18 +19,11 @@ const CustomHighlightedElementExample: React.FC<CustomHighlightedElementExampleP
                     props.highlightEle.style.outline = '1px dashed blue';
                     props.highlightEle.style.backgroundColor = 'rgba(0, 0, 0, .1)';
                 },
-            }
-        }
+            },
+        },
     });
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default CustomHighlightedElementExample;

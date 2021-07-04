@@ -12,17 +12,9 @@ const StoreCurrentPageExample: React.FC<StoreCurrentPageExampleProps> = ({ fileU
         localStorage.setItem('current-page', `${e.currentPage}`);
     };
 
-    const initialPage = localStorage.getItem('current-page')
-        ? parseInt(localStorage.getItem('current-page'), 10)
-        : 0;
+    const initialPage = localStorage.getItem('current-page') ? parseInt(localStorage.getItem('current-page'), 10) : 0;
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            initialPage={initialPage}
-            onPageChange={handlePageChange}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} initialPage={initialPage} onPageChange={handlePageChange} />;
 };
 
 export default StoreCurrentPageExample;

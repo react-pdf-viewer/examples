@@ -12,14 +12,7 @@ interface DefaultLayoutExampleProps {
 const DefaultLayoutExample: React.FC<DefaultLayoutExampleProps> = ({ fileUrl }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default DefaultLayoutExample;

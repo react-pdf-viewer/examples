@@ -11,11 +11,12 @@ interface PageNavigationButtonsExampleProps {
 
 const PageNavigationButtonsExample: React.FC<PageNavigationButtonsExampleProps> = ({ fileUrl }) => {
     const pageNavigationPluginInstance = pageNavigationPlugin();
-    const { CurrentPageInput, GoToFirstPageButton, GoToLastPageButton, GoToNextPageButton, GoToPreviousPage } = pageNavigationPluginInstance;
+    const { CurrentPageInput, GoToFirstPageButton, GoToLastPageButton, GoToNextPageButton, GoToPreviousPage } =
+        pageNavigationPluginInstance;
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -55,12 +56,7 @@ const PageNavigationButtonsExample: React.FC<PageNavigationButtonsExampleProps> 
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        pageNavigationPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[pageNavigationPluginInstance]} />
             </div>
         </div>
     );

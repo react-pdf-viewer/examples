@@ -33,12 +33,7 @@ const AttachmentExample: React.FC<AttachmentExampleProps> = ({ fileUrl }) => {
                 <Attachments />
             </div>
             <div style={{ flex: 1 }}>
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        attachmentPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[attachmentPluginInstance]} />
             </div>
         </div>
     );

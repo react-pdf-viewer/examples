@@ -33,8 +33,7 @@ const CustomizeRotateButtonsExample: React.FC<CustomizeRotateButtonsExampleProps
             >
                 <div style={{ padding: '0px 2px' }}>
                     <Rotate direction={RotateDirection.Backward}>
-                    {
-                        (props: RenderRotateProps) => (
+                        {(props: RenderRotateProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -48,14 +47,12 @@ const CustomizeRotateButtonsExample: React.FC<CustomizeRotateButtonsExampleProps
                             >
                                 Rotate backward
                             </button>
-                        )
-                    }
+                        )}
                     </Rotate>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <Rotate direction={RotateDirection.Forward}>
-                    {
-                        (props: RenderRotateProps) => (
+                        {(props: RenderRotateProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -69,11 +66,9 @@ const CustomizeRotateButtonsExample: React.FC<CustomizeRotateButtonsExampleProps
                             >
                                 Rotate forward
                             </button>
-                        )
-                    }
+                        )}
                     </Rotate>
                 </div>
-                
             </div>
             <div
                 style={{
@@ -81,12 +76,7 @@ const CustomizeRotateButtonsExample: React.FC<CustomizeRotateButtonsExampleProps
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        rotatePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[rotatePluginInstance]} />
             </div>
         </div>
     );

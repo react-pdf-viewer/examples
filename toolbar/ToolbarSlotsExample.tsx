@@ -15,7 +15,7 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -33,11 +33,18 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
                 }}
             >
                 <Toolbar>
-                {
-                    (props: ToolbarSlot) => {
+                    {(props: ToolbarSlot) => {
                         const {
-                            CurrentPageInput, Download, EnterFullScreen, GoToNextPage, GoToPreviousPage,
-                            NumberOfPages, Print, ShowSearchPopover, Zoom, ZoomIn,
+                            CurrentPageInput,
+                            Download,
+                            EnterFullScreen,
+                            GoToNextPage,
+                            GoToPreviousPage,
+                            NumberOfPages,
+                            Print,
+                            ShowSearchPopover,
+                            Zoom,
+                            ZoomIn,
                             ZoomOut,
                         } = props;
                         return (
@@ -76,9 +83,8 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
                                     <Print />
                                 </div>
                             </>
-                        )
-                    }
-                }
+                        );
+                    }}
                 </Toolbar>
             </div>
             <div
@@ -87,12 +93,7 @@ const ToolbarSlotsExample: React.FC<ToolbarSlotsExampleProps> = ({ fileUrl }) =>
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[toolbarPluginInstance]} />
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ const SwitchSelectionModeButtonsExample: React.FC<SwitchSelectionModeButtonsExam
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -46,12 +46,7 @@ const SwitchSelectionModeButtonsExample: React.FC<SwitchSelectionModeButtonsExam
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        selectionModePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[selectionModePluginInstance]} />
             </div>
         </div>
     );

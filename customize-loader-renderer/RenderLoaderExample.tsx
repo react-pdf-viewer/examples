@@ -14,12 +14,7 @@ const RenderLoaderExample: React.FC<RenderLoaderExampleProps> = ({ fileUrl }) =>
         </div>
     );
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            renderLoader={renderLoader}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} renderLoader={renderLoader} />;
 };
 
 export default RenderLoaderExample;

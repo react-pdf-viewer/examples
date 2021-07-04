@@ -21,10 +21,9 @@ const SwitchLocaleExample: React.FC<SwitchLocaleExampleProps> = ({ fileUrl }) =>
 
     return (
         <LocalizationProvider>
-        {
-            (setL10n) => (
+            {(setL10n) => (
                 <div
-                    className='rpv-core__viewer'
+                    className="rpv-core__viewer"
                     style={{
                         border: '1px solid rgba(0, 0, 0, 0.3)',
                         display: 'flex',
@@ -42,70 +41,80 @@ const SwitchLocaleExample: React.FC<SwitchLocaleExampleProps> = ({ fileUrl }) =>
                         }}
                     >
                         <Toolbar>
-                        {
-                            (props: ToolbarSlot) => {
+                            {(props: ToolbarSlot) => {
                                 const {
-                                    CurrentPageInput, Download, EnterFullScreen, GoToNextPage, GoToPreviousPage,
-                                    NumberOfPages, Open, Print, ShowProperties, ShowSearchPopover,
-                                    Zoom, ZoomIn, ZoomOut,
+                                    CurrentPageInput,
+                                    Download,
+                                    EnterFullScreen,
+                                    GoToNextPage,
+                                    GoToPreviousPage,
+                                    NumberOfPages,
+                                    Open,
+                                    Print,
+                                    ShowProperties,
+                                    ShowSearchPopover,
+                                    Zoom,
+                                    ZoomIn,
+                                    ZoomOut,
                                 } = props;
                                 return (
                                     <>
                                         <>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <ShowSearchPopover />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <GoToPreviousPage />
-                                        </div>
-                                        <div style={{ padding: '0px 2px', width: '4rem' }}>
-                                            <CurrentPageInput />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>/ <NumberOfPages /></div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <GoToNextPage />
-                                        </div>
-                                        <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
-                                            <ZoomOut />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <Zoom />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <ZoomIn />
-                                        </div>
-                                        <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
-                                            <EnterFullScreen />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <Open />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <Download />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <Print />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <ShowProperties />
-                                        </div>
-                                        <div style={{ padding: '0px 2px' }}>
-                                            <LocalePopover
-                                                locales={{
-                                                    'en_US': 'Switch locale',
-                                                    'vi_VN': 'Chuyển ngôn ngữ',
-                                                }}
-                                                localizations={{
-                                                    'vi_VN': (vi_VN as any) as LocalizationMap,
-                                                }}
-                                                onUpdateLocalization={(loc) => setL10n(loc)}
-                                            />
-                                        </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <ShowSearchPopover />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <GoToPreviousPage />
+                                            </div>
+                                            <div style={{ padding: '0px 2px', width: '4rem' }}>
+                                                <CurrentPageInput />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                / <NumberOfPages />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <GoToNextPage />
+                                            </div>
+                                            <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
+                                                <ZoomOut />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <Zoom />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <ZoomIn />
+                                            </div>
+                                            <div style={{ padding: '0px 2px', marginLeft: 'auto' }}>
+                                                <EnterFullScreen />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <Open />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <Download />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <Print />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <ShowProperties />
+                                            </div>
+                                            <div style={{ padding: '0px 2px' }}>
+                                                <LocalePopover
+                                                    locales={{
+                                                        en_US: 'Switch locale',
+                                                        vi_VN: 'Chuyển ngôn ngữ',
+                                                    }}
+                                                    localizations={{
+                                                        vi_VN: vi_VN as any as LocalizationMap,
+                                                    }}
+                                                    onUpdateLocalization={(loc) => setL10n(loc)}
+                                                />
+                                            </div>
+                                        </>
                                     </>
-                                    </>
-                                )
-                            }
-                        }
+                                );
+                            }}
                         </Toolbar>
                     </div>
                     <div
@@ -114,17 +123,10 @@ const SwitchLocaleExample: React.FC<SwitchLocaleExampleProps> = ({ fileUrl }) =>
                             overflow: 'hidden',
                         }}
                     >
-                        <Viewer
-                            fileUrl={fileUrl}
-                            plugins={[
-                                localeSwitcherPluginInstance,
-                                toolbarPluginInstance,
-                            ]}
-                        />
+                        <Viewer fileUrl={fileUrl} plugins={[localeSwitcherPluginInstance, toolbarPluginInstance]} />
                     </div>
                 </div>
-            )
-        }
+            )}
         </LocalizationProvider>
     );
 };

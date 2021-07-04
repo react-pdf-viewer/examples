@@ -15,7 +15,7 @@ const PrintButtonExample: React.FC<PrintButtonExampleProps> = ({ fileUrl }) => {
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -40,12 +40,7 @@ const PrintButtonExample: React.FC<PrintButtonExampleProps> = ({ fileUrl }) => {
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        printPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[printPluginInstance]} />
             </div>
         </div>
     );

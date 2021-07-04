@@ -34,8 +34,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
             >
                 <div style={{ padding: '0px 2px' }}>
                     <SwitchSelectionMode mode={SelectionMode.Hand}>
-                    {
-                        (props: RenderSwitchSelectionModeProps) => (
+                        {(props: RenderSwitchSelectionModeProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -49,14 +48,12 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Hand tool
                             </button>
-                        )
-                    }
+                        )}
                     </SwitchSelectionMode>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <SwitchSelectionMode mode={SelectionMode.Text}>
-                    {
-                        (props: RenderSwitchSelectionModeProps) => (
+                        {(props: RenderSwitchSelectionModeProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -70,8 +67,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                             >
                                 Text selection tool
                             </button>
-                        )
-                    }
+                        )}
                     </SwitchSelectionMode>
                 </div>
             </div>
@@ -81,12 +77,7 @@ const CustomizeSwitchModeButtonsExample: React.FC<CustomizeSwitchModeButtonsExam
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        selectionModePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[selectionModePluginInstance]} />
             </div>
         </div>
     );
