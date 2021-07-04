@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Icon, MinimalButton, Position, SpecialZoomLevel, Tooltip, Viewer } from '@react-pdf-viewer/core';
-import { pageNavigationPlugin, RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
+import { pageNavigationPlugin, RenderGoToPageProps } from '@react-pdf-viewer/page-navigation';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
@@ -37,7 +37,7 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
             >
                 <GoToPreviousPage>
                 {
-                    (props: RenderGoToPreviousPageProps) => (
+                    (props: RenderGoToPageProps) => (
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
@@ -66,7 +66,7 @@ const SlidePresentationExample: React.FC<SlidePresentationExampleProps> = ({ fil
             >
                 <GoToNextPage>
                 {
-                    (props: RenderGoToNextPageProps) => (
+                    (props: RenderGoToPageProps) => (
                         <Tooltip
                             position={Position.BottomCenter}
                             target={
