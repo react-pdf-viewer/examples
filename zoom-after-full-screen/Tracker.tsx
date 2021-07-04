@@ -4,13 +4,13 @@ import { SpecialZoomLevel, Store } from '@react-pdf-viewer/core';
 import StoreProps from './StoreProps';
 
 const Tracker: React.FC<{
-    store: Store<StoreProps>,
+    store: Store<StoreProps>;
 }> = ({ store }) => {
     const handleFullScreenChange = (): void => {
         const fullScreenEle = document.fullscreenElement;
         const getPagesContainer = store.get('getPagesContainer');
         const zoom = store.get('zoom');
-        
+
         if (fullScreenEle && getPagesContainer && getPagesContainer() === fullScreenEle && zoom) {
             zoom(SpecialZoomLevel.PageFit);
         }

@@ -6,7 +6,7 @@ interface DrawCanvasExampleProps {
 }
 
 const DrawCanvasExample: React.FC<DrawCanvasExampleProps> = ({ fileUrl }) => {
-    const message = "customer@email.com";
+    const message = 'customer@email.com';
 
     const customCanvasPlugin = (): Plugin => {
         const onCanvasLayerRender = (e: PluginOnCanvasLayerRender) => {
@@ -17,17 +17,17 @@ const DrawCanvasExample: React.FC<DrawCanvasExampleProps> = ({ fileUrl }) => {
 
             // `e.ele` is the canvas element
             const canvas = e.ele;
-    
+
             const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
-    
+
             const fonts = ctx.font.split(' ');
             const fontSize = parseInt(fonts[0], 10);
-    
+
             ctx.textAlign = 'center';
             ctx.font = `${fontSize * e.scale * 4}px ${fonts[1]}`;
-    
+
             ctx.fillStyle = '#CCC';
             ctx.fillText(message, centerX, 100);
         };
@@ -39,14 +39,7 @@ const DrawCanvasExample: React.FC<DrawCanvasExampleProps> = ({ fileUrl }) => {
 
     const customCanvasPluginInstance = customCanvasPlugin();
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                customCanvasPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[customCanvasPluginInstance]} />;
 };
 
 export default DrawCanvasExample;

@@ -17,7 +17,7 @@ const HighlightMultipleKeywordsExample: React.FC<HighlightMultipleKeywordsExampl
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -42,12 +42,7 @@ const HighlightMultipleKeywordsExample: React.FC<HighlightMultipleKeywordsExampl
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        searchPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[searchPluginInstance]} />
             </div>
         </div>
     );

@@ -15,10 +15,7 @@ const SinglePageViewExample: React.FC<SinglePageViewExampleProps> = ({ fileUrl }
                 height: '750px',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                defaultScale={SpecialZoomLevel.PageFit}
-            />
+            <Viewer fileUrl={fileUrl} defaultScale={SpecialZoomLevel.PageFit} />
         </div>
     );
 };

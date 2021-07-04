@@ -11,21 +11,14 @@ interface RemoveTabExampleProps {
 
 const RemoveTabExample: React.FC<RemoveTabExampleProps> = ({ fileUrl }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
-        sidebarTabs: defaultTabs => [
+        sidebarTabs: (defaultTabs) => [
             // Remove the attachments tab (`defaultTabs[2]`)
             defaultTabs[0], // Bookmarks tab
             defaultTabs[1], // Thumbnails tab
         ],
     });
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default RemoveTabExample;

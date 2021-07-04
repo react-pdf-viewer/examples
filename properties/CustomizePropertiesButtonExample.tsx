@@ -15,7 +15,7 @@ const CustomizePropertiesButtonExample: React.FC<CustomizePropertiesButtonExampl
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -34,8 +34,7 @@ const CustomizePropertiesButtonExample: React.FC<CustomizePropertiesButtonExampl
                 }}
             >
                 <ShowProperties>
-                {
-                    (props: RenderShowPropertiesProps) => (
+                    {(props: RenderShowPropertiesProps) => (
                         <button
                             style={{
                                 backgroundColor: '#357edd',
@@ -49,8 +48,7 @@ const CustomizePropertiesButtonExample: React.FC<CustomizePropertiesButtonExampl
                         >
                             Properties
                         </button>
-                    )
-                }
+                    )}
                 </ShowProperties>
             </div>
             <div
@@ -59,12 +57,7 @@ const CustomizePropertiesButtonExample: React.FC<CustomizePropertiesButtonExampl
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        propertiesPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[propertiesPluginInstance]} />
             </div>
         </div>
     );

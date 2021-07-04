@@ -12,14 +12,7 @@ interface DropExampleProps {
 const DropExample: React.FC<DropExampleProps> = ({ fileUrl }) => {
     const dropPluginInstance = dropPlugin();
 
-    return (        
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                dropPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[dropPluginInstance]} />;
 };
 
 export default DropExample;

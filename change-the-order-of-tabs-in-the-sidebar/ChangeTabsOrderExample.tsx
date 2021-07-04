@@ -11,21 +11,14 @@ interface ChangeTabsOrderExampleProps {
 
 const ChangeTabsOrderExample: React.FC<ChangeTabsOrderExampleProps> = ({ fileUrl }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
-        sidebarTabs: defaultTabs => [
+        sidebarTabs: (defaultTabs) => [
             defaultTabs[1], // Bookmarks tab
             defaultTabs[0], // Thumbnails tab
             defaultTabs[2], // Attachments tab
         ],
     });
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default ChangeTabsOrderExample;

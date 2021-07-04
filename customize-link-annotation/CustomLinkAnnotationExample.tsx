@@ -11,11 +11,11 @@ const customAnnotationPlugin = (): Plugin => {
     const onAnnotationLayerRender = (e: PluginOnAnnotationLayerRender) => {
         // Find all `Link` annotation
         e.annotations
-            .filter(annotation => annotation.annotationType === AnnotationType.Link)
-            .forEach(annotation => {
+            .filter((annotation) => annotation.annotationType === AnnotationType.Link)
+            .forEach((annotation) => {
                 if (annotation.url) {
                     // Find the `a` element represents the link
-                    [...e.container.querySelectorAll('.rpv-core-annotation-link a')].forEach(linkEle => {
+                    [...e.container.querySelectorAll('.rpv-core-annotation-link a')].forEach((linkEle) => {
                         linkEle.setAttribute('target', '_blank');
                     });
                 }
@@ -37,12 +37,7 @@ const CustomLinkAnnotationExample: React.FC<CustomLinkAnnotationExampleProps> = 
                 height: '750px',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    customAnnotationPluginInstance,
-                ]}
-            />
+            <Viewer fileUrl={fileUrl} plugins={[customAnnotationPluginInstance]} />
         </div>
     );
 };

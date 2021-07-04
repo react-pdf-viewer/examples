@@ -23,7 +23,11 @@ const RenderHighlightTargetExample: React.FC<RenderHighlightTargetExampleProps> 
         >
             <Tooltip
                 position={Position.TopCenter}
-                target={<Button onClick={props.toggle}><MessageIcon /></Button>}
+                target={
+                    <Button onClick={props.toggle}>
+                        <MessageIcon />
+                    </Button>
+                }
                 content={() => <div style={{ width: '100px' }}>Add a note</div>}
                 offset={{ left: 0, top: -8 }}
             />
@@ -42,12 +46,7 @@ const RenderHighlightTargetExample: React.FC<RenderHighlightTargetExampleProps> 
                 overflow: 'hidden',
             }}
         >
-            <Viewer
-                fileUrl={fileUrl}
-                plugins={[
-                    highlightPluginInstance,
-                ]}
-            />
+            <Viewer fileUrl={fileUrl} plugins={[highlightPluginInstance]} />
         </div>
     );
 };

@@ -11,8 +11,8 @@ const zoomAfterFullScreen = (): Plugin => {
         const { slot } = props;
         slot.children = (
             <>
-            <Tracker store={store} />
-            {slot.children}
+                <Tracker store={store} />
+                {slot.children}
             </>
         );
         return slot;

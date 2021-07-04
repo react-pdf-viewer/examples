@@ -11,7 +11,7 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -29,8 +29,7 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                 }}
             >
                 <Search>
-                {
-                    (renderSearchProps: RenderSearchProps) => {
+                    {(renderSearchProps: RenderSearchProps) => {
                         const [readyToSearch, setReadyToSearch] = useState(false);
                         return (
                             <>
@@ -45,9 +44,9 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                         style={{
                                             border: 'none',
                                             padding: '8px',
-                                            width: '200px'
+                                            width: '200px',
                                         }}
-                                        placeholder='Enter to search'
+                                        placeholder="Enter to search"
                                         type="text"
                                         value={renderSearchProps.keyword}
                                         onChange={(e) => {
@@ -68,11 +67,15 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                                 style={{
                                                     background: '#fff',
                                                     border: 'none',
-                                                    borderBottom: `2px solid ${renderSearchProps.matchCase ? 'blue' : 'transparent'}`,
+                                                    borderBottom: `2px solid ${
+                                                        renderSearchProps.matchCase ? 'blue' : 'transparent'
+                                                    }`,
                                                     height: '100%',
                                                     padding: '0 2px',
                                                 }}
-                                                onClick={() => renderSearchProps.changeMatchCase(!renderSearchProps.matchCase)}
+                                                onClick={() =>
+                                                    renderSearchProps.changeMatchCase(!renderSearchProps.matchCase)
+                                                }
                                             >
                                                 <Icon>
                                                     <path d="M15.979,21.725,9.453,2.612a.5.5,0,0,0-.946,0L2,21.725" />
@@ -95,11 +98,15 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                                 style={{
                                                     background: '#fff',
                                                     border: 'none',
-                                                    borderBottom: `2px solid ${renderSearchProps.wholeWords ? 'blue' : 'transparent'}`,
+                                                    borderBottom: `2px solid ${
+                                                        renderSearchProps.wholeWords ? 'blue' : 'transparent'
+                                                    }`,
                                                     height: '100%',
                                                     padding: '0 2px',
                                                 }}
-                                                onClick={() => renderSearchProps.changeWholeWords(!renderSearchProps.wholeWords)}
+                                                onClick={() =>
+                                                    renderSearchProps.changeWholeWords(!renderSearchProps.wholeWords)
+                                                }
                                             >
                                                 <Icon>
                                                     <path d="M0.500 7.498 L23.500 7.498 L23.500 16.498 L0.500 16.498 Z" />
@@ -111,11 +118,15 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                         offset={{ left: 0, top: 8 }}
                                     />
                                 </div>
-                                {readyToSearch && renderSearchProps.keyword && renderSearchProps.numberOfMatches === 0 && (  
-                                    <div style={{ padding: '0 8px' }}>Not found</div>
-                                )}
+                                {readyToSearch &&
+                                    renderSearchProps.keyword &&
+                                    renderSearchProps.numberOfMatches === 0 && (
+                                        <div style={{ padding: '0 8px' }}>Not found</div>
+                                    )}
                                 {readyToSearch && renderSearchProps.keyword && renderSearchProps.numberOfMatches > 0 && (
-                                    <div style={{ padding: '0 8px' }}>{renderSearchProps.currentMatch} of {renderSearchProps.numberOfMatches}</div>
+                                    <div style={{ padding: '0 8px' }}>
+                                        {renderSearchProps.currentMatch} of {renderSearchProps.numberOfMatches}
+                                    </div>
                                 )}
                                 <div style={{ padding: '0 2px' }}>
                                     <Tooltip
@@ -142,9 +153,8 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                     />
                                 </div>
                             </>
-                        )
-                    }
-                }
+                        );
+                    }}
                 </Search>
             </div>
             <div
@@ -153,12 +163,7 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl='/assets/pdf-open-parameters.pdf'
-                    plugins={[
-                        searchPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl="/assets/pdf-open-parameters.pdf" plugins={[searchPluginInstance]} />
             </div>
         </div>
     );

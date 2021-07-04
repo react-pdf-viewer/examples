@@ -22,7 +22,7 @@ const SwitchScrollModeButtonsExample: React.FC<SwitchScrollModeButtonsExamplePro
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -64,13 +64,7 @@ const SwitchScrollModeButtonsExample: React.FC<SwitchScrollModeButtonsExamplePro
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        scrollModePluginInstance,
-                        zoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[scrollModePluginInstance, zoomPluginInstance]} />
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -41,11 +41,16 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
                 }}
             >
                 <Toolbar>
-                {
-                    (props: ToolbarSlot) => {
+                    {(props: ToolbarSlot) => {
                         const {
-                            CurrentPageInput, EnterFullScreen, GoToNextPage, GoToPreviousPage,
-                            NumberOfPages, Print, Zoom, ZoomIn,
+                            CurrentPageInput,
+                            EnterFullScreen,
+                            GoToNextPage,
+                            GoToPreviousPage,
+                            NumberOfPages,
+                            Print,
+                            Zoom,
+                            ZoomIn,
                             ZoomOut,
                         } = props;
                         return (
@@ -81,9 +86,8 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
                                     <Print />
                                 </div>
                             </>
-                        )
-                    }
-                }
+                        );
+                    }}
                 </Toolbar>
             </div>
             <div
@@ -93,11 +97,9 @@ const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl
                 }}
             >
                 <Viewer
-                    fileUrl='/assets/pdf-open-parameters.pdf'
+                    fileUrl="/assets/pdf-open-parameters.pdf"
                     renderPage={renderPage}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
+                    plugins={[toolbarPluginInstance]}
                 />
             </div>
         </div>

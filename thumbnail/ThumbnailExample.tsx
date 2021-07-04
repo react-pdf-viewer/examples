@@ -15,7 +15,7 @@ const ThumbnailExample: React.FC<ThumbnailExampleProps> = ({ fileUrl }) => {
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -32,12 +32,7 @@ const ThumbnailExample: React.FC<ThumbnailExampleProps> = ({ fileUrl }) => {
                 <Thumbnails />
             </div>
             <div style={{ flex: 1 }}>
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        thumbnailPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[thumbnailPluginInstance]} />
             </div>
         </div>
     );

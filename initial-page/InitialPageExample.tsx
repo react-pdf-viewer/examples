@@ -14,10 +14,7 @@ const InitialPageExample: React.FC<InitialPageExampleProps> = ({ fileUrl }) => (
             height: '750px',
         }}
     >
-        <Viewer
-            fileUrl={fileUrl}
-            initialPage={2}
-        />
+        <Viewer fileUrl={fileUrl} initialPage={2} />
     </div>
 );
 

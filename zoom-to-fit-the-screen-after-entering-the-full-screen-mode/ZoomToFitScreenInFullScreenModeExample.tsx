@@ -19,19 +19,12 @@ const ZoomToFitScreenInFullScreenModeExample: React.FC<ZoomToFitScreenInFullScre
                 },
                 onExitFullScreen: (zoom) => {
                     zoom(SpecialZoomLevel.PageFit);
-                }, 
+                },
             },
         },
     });
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
 };
 
 export default ZoomToFitScreenInFullScreenModeExample;

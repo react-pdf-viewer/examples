@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { highlightPlugin, HighlightArea, MessageIcon, RenderHighlightContentProps, RenderHighlightsProps, RenderHighlightTargetProps } from '@react-pdf-viewer/highlight';
+import {
+    highlightPlugin,
+    HighlightArea,
+    MessageIcon,
+    RenderHighlightContentProps,
+    RenderHighlightsProps,
+    RenderHighlightTargetProps,
+} from '@react-pdf-viewer/highlight';
 import { Button, Position, PrimaryButton, Tooltip, Viewer } from '@react-pdf-viewer/core';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -36,7 +43,11 @@ const DisplayNotesSidebarExample: React.FC<DisplayNotesSidebarExampleProps> = ({
         >
             <Tooltip
                 position={Position.TopCenter}
-                target={<Button onClick={props.toggle}><MessageIcon /></Button>}
+                target={
+                    <Button onClick={props.toggle}>
+                        <MessageIcon />
+                    </Button>
+                }
                 content={() => <div style={{ width: '100px' }}>Add a note</div>}
                 offset={{ left: 0, top: -8 }}
             />
@@ -76,7 +87,7 @@ const DisplayNotesSidebarExample: React.FC<DisplayNotesSidebarExampleProps> = ({
                         style={{
                             border: '1px solid rgba(0, 0, 0, .3)',
                         }}
-                        onChange={e => setMessage(e.target.value)}
+                        onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                 </div>
                 <div
@@ -102,31 +113,29 @@ const DisplayNotesSidebarExample: React.FC<DisplayNotesSidebarExampleProps> = ({
 
     const renderHighlights = (props: RenderHighlightsProps) => (
         <div>
-        {
-            notes.map(note => (
+            {notes.map((note) => (
                 <React.Fragment key={note.id}>
-                {
-                    note.highlightAreas
-                        .filter(area => area.pageIndex === props.pageIndex)
+                    {note.highlightAreas
+                        .filter((area) => area.pageIndex === props.pageIndex)
                         .map((area, idx) => (
                             <div
                                 key={idx}
-                                style={
-                                    Object.assign({}, {
+                                style={Object.assign(
+                                    {},
+                                    {
                                         background: 'yellow',
                                         opacity: 0.4,
-                                    }, props.getCssProperties(area, props.rotation))
-                                }
+                                    },
+                                    props.getCssProperties(area, props.rotation)
+                                )}
                                 onClick={() => jumpToNote(note)}
                                 ref={(ref): void => {
                                     noteEles.set(note.id, ref as HTMLElement);
                                 }}
                             />
-                        ))
-                }
+                        ))}
                 </React.Fragment>
-            ))
-        }
+            ))}
         </div>
     );
 
@@ -155,36 +164,34 @@ const DisplayNotesSidebarExample: React.FC<DisplayNotesSidebarExampleProps> = ({
                 }}
             >
                 {notes.length === 0 && <div style={{ textAlign: 'center' }}>There is no note</div>}
-                {
-                    notes.map(note => {
-                        return (
-                            <div
-                                key={note.id}
+                {notes.map((note) => {
+                    return (
+                        <div
+                            key={note.id}
+                            style={{
+                                borderBottom: '1px solid rgba(0, 0, 0, .3)',
+                                cursor: 'pointer',
+                                padding: '8px',
+                            }}
+                            // Jump to the associated highlight area
+                            onClick={() => jumpToHighlightArea(note.highlightAreas[0])}
+                        >
+                            <blockquote
                                 style={{
-                                    borderBottom: '1px solid rgba(0, 0, 0, .3)',
-                                    cursor: 'pointer',
-                                    padding: '8px',
+                                    borderLeft: '2px solid rgba(0, 0, 0, 0.2)',
+                                    fontSize: '.75rem',
+                                    lineHeight: 1.5,
+                                    margin: '0 0 8px 0',
+                                    paddingLeft: '8px',
+                                    textAlign: 'justify',
                                 }}
-                                // Jump to the associated highlight area
-                                onClick={() => jumpToHighlightArea(note.highlightAreas[0])}
                             >
-                                <blockquote
-                                    style={{
-                                        borderLeft: '2px solid rgba(0, 0, 0, 0.2)',
-                                        fontSize: '.75rem',
-                                        lineHeight: 1.5,
-                                        margin: '0 0 8px 0',
-                                        paddingLeft: '8px',
-                                        textAlign: 'justify',
-                                    }}
-                                >
-                                    {note.quote}
-                                </blockquote>
-                                {note.content}
-                            </div>
-                        );
-                    })
-                }
+                                {note.quote}
+                            </blockquote>
+                            {note.content}
+                        </div>
+                    );
+                })}
             </div>
             <div
                 style={{
@@ -192,12 +199,7 @@ const DisplayNotesSidebarExample: React.FC<DisplayNotesSidebarExampleProps> = ({
                     overflow: 'auto',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        highlightPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[highlightPluginInstance]} />
             </div>
         </div>
     );

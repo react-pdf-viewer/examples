@@ -49,12 +49,7 @@ const RenderErrorExample: React.FC<RenderErrorExampleProps> = ({ fileUrl }) => {
         );
     };
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            renderError={renderError}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} renderError={renderError} />;
 };
 
 export default RenderErrorExample;

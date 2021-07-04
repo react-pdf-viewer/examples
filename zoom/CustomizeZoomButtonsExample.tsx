@@ -34,8 +34,7 @@ const CustomizeZoomButtonsExample: React.FC<CustomizeZoomButtonsExampleProps> = 
             >
                 <div style={{ padding: '0px 2px' }}>
                     <ZoomOut>
-                    {
-                        (props: RenderZoomOutProps) => (
+                        {(props: RenderZoomOutProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -49,21 +48,17 @@ const CustomizeZoomButtonsExample: React.FC<CustomizeZoomButtonsExampleProps> = 
                             >
                                 Zoom out
                             </button>
-                        )
-                    }
+                        )}
                     </ZoomOut>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <CurrentScale>
-                    {
-                        (props: RenderCurrentScaleProps) => <>{`${Math.round(props.scale * 100)}%`}</>
-                    }
+                        {(props: RenderCurrentScaleProps) => <>{`${Math.round(props.scale * 100)}%`}</>}
                     </CurrentScale>
                 </div>
                 <div style={{ padding: '0px 2px' }}>
                     <ZoomIn>
-                    {
-                        (props: RenderZoomInProps) => (
+                        {(props: RenderZoomInProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -77,8 +72,7 @@ const CustomizeZoomButtonsExample: React.FC<CustomizeZoomButtonsExampleProps> = 
                             >
                                 Zoom in
                             </button>
-                        )
-                    }
+                        )}
                     </ZoomIn>
                 </div>
             </div>
@@ -88,12 +82,7 @@ const CustomizeZoomButtonsExample: React.FC<CustomizeZoomButtonsExampleProps> = 
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        zoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[zoomPluginInstance]} />
             </div>
         </div>
     );

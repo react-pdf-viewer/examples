@@ -18,12 +18,7 @@ const SvgLayerExample: React.FC<SvgLayerExampleProps> = ({ fileUrl }) => {
         );
     };
 
-    return (
-        <Viewer
-            fileUrl={fileUrl}
-            renderPage={renderPage}
-        />
-    );
+    return <Viewer fileUrl={fileUrl} renderPage={renderPage} />;
 };
 
 export default SvgLayerExample;

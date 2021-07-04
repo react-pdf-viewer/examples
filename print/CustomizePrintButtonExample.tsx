@@ -32,8 +32,7 @@ const CustomizePrintButtonExample: React.FC<CustomizePrintButtonExampleProps> = 
                 }}
             >
                 <Print>
-                {
-                    (props: RenderPrintProps) => (
+                    {(props: RenderPrintProps) => (
                         <button
                             style={{
                                 backgroundColor: '#357edd',
@@ -47,8 +46,7 @@ const CustomizePrintButtonExample: React.FC<CustomizePrintButtonExampleProps> = 
                         >
                             Print
                         </button>
-                    )
-                }
+                    )}
                 </Print>
             </div>
             <div
@@ -57,12 +55,7 @@ const CustomizePrintButtonExample: React.FC<CustomizePrintButtonExampleProps> = 
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        printPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[printPluginInstance]} />
             </div>
         </div>
     );

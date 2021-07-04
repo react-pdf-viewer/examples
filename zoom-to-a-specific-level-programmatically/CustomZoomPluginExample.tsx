@@ -129,12 +129,7 @@ const CustomZoomPluginExample: React.FC<CustomZoomPluginExampleProps> = ({ fileU
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        customZoomPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[customZoomPluginInstance]} />
             </div>
         </div>
     );

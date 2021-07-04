@@ -15,7 +15,7 @@ const DefaultToolbarExample: React.FC<DefaultToolbarExampleProps> = ({ fileUrl }
 
     return (
         <div
-            className='rpv-core__viewer'
+            className="rpv-core__viewer"
             style={{
                 border: '1px solid rgba(0, 0, 0, 0.3)',
                 display: 'flex',
@@ -40,12 +40,7 @@ const DefaultToolbarExample: React.FC<DefaultToolbarExampleProps> = ({ fileUrl }
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        toolbarPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[toolbarPluginInstance]} />
             </div>
         </div>
     );

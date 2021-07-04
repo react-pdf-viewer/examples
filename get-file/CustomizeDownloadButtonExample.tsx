@@ -30,8 +30,7 @@ const CustomizeDownloadButtonExample: React.FC<CustomizeDownloadButtonExamplePro
                 }}
             >
                 <Download>
-                {
-                    (props: RenderDownloadProps) => (
+                    {(props: RenderDownloadProps) => (
                         <button
                             style={{
                                 backgroundColor: '#357edd',
@@ -45,8 +44,7 @@ const CustomizeDownloadButtonExample: React.FC<CustomizeDownloadButtonExamplePro
                         >
                             Download
                         </button>
-                    )
-                }
+                    )}
                 </Download>
             </div>
             <div
@@ -55,12 +53,7 @@ const CustomizeDownloadButtonExample: React.FC<CustomizeDownloadButtonExamplePro
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        getFilePluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[getFilePluginInstance]} />
             </div>
         </div>
     );

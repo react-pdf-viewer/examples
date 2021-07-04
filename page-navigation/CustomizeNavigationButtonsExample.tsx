@@ -34,8 +34,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
             >
                 <div style={{ padding: '0 2px' }}>
                     <GoToFirstPage>
-                    {
-                        (props: RenderGoToPageProps) => (
+                        {(props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -49,14 +48,12 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                             >
                                 First page
                             </button>
-                        )
-                    }
+                        )}
                     </GoToFirstPage>
                 </div>
                 <div style={{ padding: '0 2px' }}>
                     <GoToPreviousPage>
-                    {
-                        (props: RenderGoToPageProps) => (
+                        {(props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -71,14 +68,12 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                             >
                                 Previous page
                             </button>
-                        )
-                    }
+                        )}
                     </GoToPreviousPage>
                 </div>
                 <div style={{ padding: '0 2px' }}>
                     <GoToNextPage>
-                    {
-                        (props: RenderGoToPageProps) => (
+                        {(props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: props.isDisabled ? '#96ccff' : '#357edd',
@@ -93,14 +88,12 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                             >
                                 Next page
                             </button>
-                        )
-                    }
+                        )}
                     </GoToNextPage>
                 </div>
                 <div style={{ padding: '0 2px' }}>
                     <GoToLastPage>
-                    {
-                        (props: RenderGoToPageProps) => (
+                        {(props: RenderGoToPageProps) => (
                             <button
                                 style={{
                                     backgroundColor: '#357edd',
@@ -114,8 +107,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                             >
                                 Last page
                             </button>
-                        )
-                    }
+                        )}
                     </GoToLastPage>
                 </div>
             </div>
@@ -125,12 +117,7 @@ const CustomizeNavigationButtonsExample: React.FC<CustomizeNavigationButtonsExam
                     overflow: 'hidden',
                 }}
             >
-                <Viewer
-                    fileUrl={fileUrl}
-                    plugins={[
-                        pageNavigationPluginInstance,
-                    ]}
-                />
+                <Viewer fileUrl={fileUrl} plugins={[pageNavigationPluginInstance]} />
             </div>
         </div>
     );
