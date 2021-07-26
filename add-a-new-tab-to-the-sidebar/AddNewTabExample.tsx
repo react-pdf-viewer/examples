@@ -21,7 +21,7 @@ const AddNewTabExample: React.FC<AddNewTabExampleProps> = ({ fileUrl }) => {
                         <path d="M5.5 7L18.5 7" />
                     </Icon>
                 ),
-                title: <>Notes</>,
+                title: 'Notes',
             }),
     });
 
