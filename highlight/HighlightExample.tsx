@@ -210,7 +210,7 @@ const HighlightExample: React.FC<HighlightExampleProps> = ({ fileUrl }) => {
             defaultTabs.concat({
                 content: sidebarNotes,
                 icon: <MessageIcon />,
-                title: <>Notes</>,
+                title: 'Notes',
             }),
     });
     const { activateTab } = defaultLayoutPluginInstance;
