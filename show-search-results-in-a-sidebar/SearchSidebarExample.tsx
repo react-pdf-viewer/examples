@@ -27,6 +27,7 @@ const SearchSidebarExample: React.FC<SearchSidebarExampleProps> = ({ fileUrl }) 
                 style={{
                     borderRight: '1px solid rgba(0, 0, 0, .2)',
                     flex: '0 0 15rem',
+                    width: '15rem',
                 }}
             >
                 <SearchSidebar searchPluginInstance={searchPluginInstance} />
