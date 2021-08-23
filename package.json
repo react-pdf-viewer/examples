@@ -1,7 +1,7 @@
 {
     "name": "@react-pdf-viewer/examples",
     "private": true,
-    "version": "2.6.0",
+    "version": "2.7.2",
     "description": "",
     "scripts": {
         "format": "prettier --write \"**/*.+(css|json|js|jsx|mdx|scss|ts|tsx)\""
