@@ -1,24 +1,18 @@
 import * as React from 'react';
-import { createStore, Plugin, PluginOnDocumentLoad, RenderViewer } from '@react-pdf-viewer/core';
-
-import { PageThumbnail } from './PageThumbnail';
-import { StoreProps } from './StoreProps';
+import type { Plugin, RenderViewer } from '@react-pdf-viewer/core';
 
 export interface PageThumbnailPluginProps {
-    pageIndex: number;
+    PageThumbnail: React.ReactElement;
 }
 
 export const pageThumbnailPlugin = (props: PageThumbnailPluginProps): Plugin => {
-    const store = React.useMemo(() => createStore<StoreProps>({}), []);
+    const { PageThumbnail } = props;
 
     return {
-        onDocumentLoad: (e: PluginOnDocumentLoad) => {
-            store.update('doc', e.doc);
-        },
         renderViewer: (renderProps: RenderViewer) => {
             let { slot } = renderProps;
 
-            slot.children = <PageThumbnail pageIndex={props.pageIndex} store={store} />;
+            slot.children = PageThumbnail;
 
             // Reset the sub slot
             slot.subSlot.attrs = {};
