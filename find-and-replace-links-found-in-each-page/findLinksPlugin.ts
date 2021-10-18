@@ -1,5 +1,5 @@
 import { LayerRenderStatus, Plugin, PluginOnTextLayerRender } from '@react-pdf-viewer/core';
-import linkifyElement from 'linkifyjs/element';
+import linkifyElement from 'linkify-element';
 
 const findLinksPlugin = (): Plugin => {
     const findLinks = (e: PluginOnTextLayerRender) => {
