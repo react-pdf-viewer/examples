@@ -6,5 +6,5 @@ This repository contains the sources of all React PDF Viewer [examples](https://
 
 These examples work with
 
-* `@react-pdf-viewer` 2.11.0
-* `pdfjs-dist` 2.10.377
+* `@react-pdf-viewer` 3.0.0
+* `pdfjs-dist` 2.11.338
