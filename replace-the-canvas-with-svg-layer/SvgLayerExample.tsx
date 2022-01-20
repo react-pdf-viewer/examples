@@ -6,7 +6,7 @@ interface SvgLayerExampleProps {
 }
 
 const CustomPageLayer: React.FC<{
-    renderPageProps: RenderPageProps
+    renderPageProps: RenderPageProps;
 }> = ({ renderPageProps }) => {
     React.useEffect(() => {
         if (renderPageProps.textLayerRendered) {
@@ -20,11 +20,16 @@ const CustomPageLayer: React.FC<{
             {renderPageProps.textLayer.children}
             {renderPageProps.annotationLayer.children}
         </>
-    ); 
+    );
 };
 
 const SvgLayerExample: React.FC<SvgLayerExampleProps> = ({ fileUrl }) => {
-    return <Viewer fileUrl={fileUrl} renderPage={(renderPageProps) => <CustomPageLayer renderPageProps={renderPageProps} />} />;
+    return (
+        <Viewer
+            fileUrl={fileUrl}
+            renderPage={(renderPageProps) => <CustomPageLayer renderPageProps={renderPageProps} />}
+        />
+    );
 };
 
 export default SvgLayerExample;
