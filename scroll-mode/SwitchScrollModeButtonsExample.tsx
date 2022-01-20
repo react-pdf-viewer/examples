@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Viewer } from '@react-pdf-viewer/core';
-import { ScrollMode, scrollModePlugin } from '@react-pdf-viewer/scroll-mode';
+import { ScrollMode, Viewer } from '@react-pdf-viewer/core';
+import { scrollModePlugin } from '@react-pdf-viewer/scroll-mode';
 import { zoomPlugin } from '@react-pdf-viewer/zoom';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/scroll-mode/lib/styles/index.css';
 import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
 interface SwitchScrollModeButtonsExampleProps {
@@ -12,9 +11,7 @@ interface SwitchScrollModeButtonsExampleProps {
 }
 
 const SwitchScrollModeButtonsExample: React.FC<SwitchScrollModeButtonsExampleProps> = ({ fileUrl }) => {
-    const scrollModePluginInstance = scrollModePlugin({
-        scrollMode: ScrollMode.Horizontal,
-    });
+    const scrollModePluginInstance = scrollModePlugin();
     const zoomPluginInstance = zoomPlugin();
 
     const { SwitchScrollModeButton } = scrollModePluginInstance;
@@ -34,7 +31,7 @@ const SwitchScrollModeButtonsExample: React.FC<SwitchScrollModeButtonsExamplePro
                 style={{
                     alignItems: 'center',
                     backgroundColor: '#eeeeee',
-                    borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
                     display: 'flex',
                     padding: '4px',
                 }}
@@ -64,7 +61,11 @@ const SwitchScrollModeButtonsExample: React.FC<SwitchScrollModeButtonsExamplePro
                     overflow: 'hidden',
                 }}
             >
-                <Viewer fileUrl={fileUrl} plugins={[scrollModePluginInstance, zoomPluginInstance]} />
+                <Viewer
+                    fileUrl={fileUrl}
+                    plugins={[scrollModePluginInstance, zoomPluginInstance]}
+                    scrollMode={ScrollMode.Horizontal}
+                />
             </div>
         </div>
     );

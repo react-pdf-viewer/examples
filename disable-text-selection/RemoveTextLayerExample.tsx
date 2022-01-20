@@ -9,18 +9,28 @@ interface RemoveTextLayerExampleProps {
     fileUrl: string;
 }
 
+const CustomPageLayer: React.FC<{
+    renderPageProps: RenderPageProps;
+}> = ({ renderPageProps }) => {
+    React.useEffect(() => {
+        if (renderPageProps.canvasLayerRendered) {
+            renderPageProps.markRendered(renderPageProps.pageIndex);
+        }
+    }, [renderPageProps.canvasLayerRendered]);
+
+    return (
+        <>
+            {renderPageProps.canvasLayer.children}
+            {renderPageProps.annotationLayer.children}
+        </>
+    );
+};
+
 const RemoveTextLayerExample: React.FC<RemoveTextLayerExampleProps> = ({ fileUrl }) => {
     const toolbarPluginInstance = toolbarPlugin();
     const { Toolbar } = toolbarPluginInstance;
 
-    const renderPage = (props: RenderPageProps) => {
-        return (
-            <>
-                {props.canvasLayer.children}
-                {props.annotationLayer.children}
-            </>
-        );
-    };
+    const renderPage = (props: RenderPageProps) => <CustomPageLayer renderPageProps={props} />;
 
     return (
         <div
