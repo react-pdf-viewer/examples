@@ -15,13 +15,24 @@ const ReadingProgressExample: React.FC<ReadingProgressExampleProps> = ({ fileUrl
     const readingIndicatorPluginInstance = readingIndicatorPlugin();
     const { ReadingIndicator } = readingIndicatorPluginInstance;
 
-    const renderToolbar = (Toolbar: (props: ToolbarProps) => React.ReactElement) => (
-        <>
-            <Toolbar />
-            <div style={{ margin: '4px -4px -4px -4px' }}>
-                <ReadingIndicator />
-            </div>
-        </>
+    const renderToolbar = React.useCallback(
+        (Toolbar: (props: ToolbarProps) => React.ReactElement) => (
+            <>
+                <Toolbar />
+                <div
+                    style={{
+                        bottom: '-0.25rem',
+                        position: 'absolute',
+                        left: 0,
+                        // Take the full width of toolbar
+                        width: '100%',
+                    }}
+                >
+                    <ReadingIndicator />
+                </div>
+            </>
+        ),
+        []
     );
 
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
