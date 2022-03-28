@@ -16,8 +16,11 @@ const RemovePartsDefaultToolbarDefaultLayoutExample: React.FC<RemovePartsDefault
     const transform: TransformToolbarSlot = (slot: ToolbarSlot) => ({
         ...slot,
         Download: () => <></>,
+        DownloadMenuItem: () => <></>,
         EnterFullScreen: () => <></>,
+        EnterFullScreenMenuItem: () => <></>,
         SwitchTheme: () => <></>,
+        SwitchThemeMenuItem: () => <></>,
     });
 
     const renderToolbar = (Toolbar: (props: ToolbarProps) => React.ReactElement) => (
