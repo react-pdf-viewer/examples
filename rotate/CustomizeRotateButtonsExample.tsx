@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Viewer } from '@react-pdf-viewer/core';
-import { RenderRotateProps, RotateDirection, rotatePlugin } from '@react-pdf-viewer/rotate';
+import { RotateDirection, Viewer } from '@react-pdf-viewer/core';
+import { RenderRotateProps, rotatePlugin } from '@react-pdf-viewer/rotate';
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
