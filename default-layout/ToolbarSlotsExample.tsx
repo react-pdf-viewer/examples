@@ -27,6 +27,7 @@ const ToolbarSlotsExample: React.FC<{}> = () => {
                         style={{
                             alignItems: 'center',
                             display: 'flex',
+                            width: '100%',
                         }}
                     >
                         <div style={{ padding: '0px 2px' }}>
