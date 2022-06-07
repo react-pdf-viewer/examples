@@ -36,6 +36,7 @@ const RenderHighlightContentExample: React.FC<RenderHighlightContentExampleProps
                 left: `${props.selectionRegion.left}%`,
                 top: `${props.selectionRegion.top + props.selectionRegion.height}%`,
                 transform: 'translate(0, 8px)',
+                zIndex: 1,
             }}
         >
             <Tooltip
