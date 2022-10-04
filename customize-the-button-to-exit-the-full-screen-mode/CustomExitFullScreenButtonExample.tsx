@@ -19,6 +19,7 @@ const CustomExitFullScreenButtonExample: React.FC<CustomExitFullScreenButtonExam
                             bottom: '1rem',
                             position: 'fixed',
                             right: '1rem',
+                            zIndex: 1,
                         }}
                     >
                         <PrimaryButton onClick={props.onClick}>Exit full screen</PrimaryButton>
