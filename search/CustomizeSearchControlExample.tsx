@@ -123,11 +123,13 @@ const CustomizeSearchControlExample: React.FC<{}> = () => {
                                     renderSearchProps.numberOfMatches === 0 && (
                                         <div style={{ padding: '0 8px' }}>Not found</div>
                                     )}
-                                {readyToSearch && renderSearchProps.keyword && renderSearchProps.numberOfMatches > 0 && (
-                                    <div style={{ padding: '0 8px' }}>
-                                        {renderSearchProps.currentMatch} of {renderSearchProps.numberOfMatches}
-                                    </div>
-                                )}
+                                {readyToSearch &&
+                                    renderSearchProps.keyword &&
+                                    renderSearchProps.numberOfMatches > 0 && (
+                                        <div style={{ padding: '0 8px' }}>
+                                            {renderSearchProps.currentMatch} of {renderSearchProps.numberOfMatches}
+                                        </div>
+                                    )}
                                 <div style={{ padding: '0 2px' }}>
                                     <Tooltip
                                         position={Position.BottomCenter}

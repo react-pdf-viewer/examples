@@ -9,19 +9,19 @@ interface IncludeToolbarFullScreenModeDefaultLayoutExampleProps {
     fileUrl: string;
 }
 
-const IncludeToolbarFullScreenModeDefaultLayoutExample: React.FC<IncludeToolbarFullScreenModeDefaultLayoutExampleProps> =
-    ({ fileUrl }) => {
-        const defaultLayoutPluginInstance = defaultLayoutPlugin({
-            toolbarPlugin: {
-                fullScreenPlugin: {
-                    getFullScreenTarget: (pagesContainer) =>
-                        pagesContainer.closest('[data-testid="default-layout__body"]'),
-                    renderExitFullScreenButton: (props) => <></>,
-                },
+const IncludeToolbarFullScreenModeDefaultLayoutExample: React.FC<
+    IncludeToolbarFullScreenModeDefaultLayoutExampleProps
+> = ({ fileUrl }) => {
+    const defaultLayoutPluginInstance = defaultLayoutPlugin({
+        toolbarPlugin: {
+            fullScreenPlugin: {
+                getFullScreenTarget: (pagesContainer) => pagesContainer.closest('[data-testid="default-layout__body"]'),
+                renderExitFullScreenButton: (props) => <></>,
             },
-        });
+        },
+    });
 
-        return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
-    };
+    return <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />;
+};
 
 export default IncludeToolbarFullScreenModeDefaultLayoutExample;
