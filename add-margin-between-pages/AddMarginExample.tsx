@@ -13,7 +13,7 @@ interface AddMarginExampleProps {
 const AddMarginExample: React.FC<AddMarginExampleProps> = ({ fileUrl }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     const pageLayout: PageLayout = {
-        tranformSize: ({ size }) => ({ height: size.height + 30, width: size.width + 30 }),
+        transformSize: ({ size }) => ({ height: size.height + 30, width: size.width + 30 }),
     };
 
     return <Viewer fileUrl={fileUrl} pageLayout={pageLayout} plugins={[defaultLayoutPluginInstance]} />;
