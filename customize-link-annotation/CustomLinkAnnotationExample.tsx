@@ -15,7 +15,7 @@ const customAnnotationPlugin = (): Plugin => {
             .forEach((annotation) => {
                 if (annotation.url) {
                     // Find the `a` element represents the link
-                    [...e.container.querySelectorAll('.rpv-core-annotation-link a')].forEach((linkEle) => {
+                    [...e.container.querySelectorAll('.rpv-core__annotation--link a')].forEach((linkEle) => {
                         linkEle.setAttribute('target', '_blank');
                     });
                 }
